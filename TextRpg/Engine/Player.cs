@@ -11,5 +11,12 @@ namespace Engine
         public int Gold { get; set; }
         public int Experience{ get; set;}
         public int Level { get; set;}
+
+        public Player (int gold, int experience, int level, int currentHealth, int maximumHealth) :base(currentHealth,maximumHealth)
+        {
+            Gold = gold;
+            Experience = experience;
+            Level = level;
+        }
     }
 }

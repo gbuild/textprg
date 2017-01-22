@@ -9,5 +9,10 @@ namespace Engine
     public class Armor: Item
     {
         public int Defence { get; set; }
+
+        public Armor (int id, string name, string namePlural, int defence ) :base (id,name,namePlural)
+        {
+            Defence = defence;
+        }
     }
 }

@@ -17,12 +17,7 @@ namespace TextRpg
         public TextRpg()
         {
             InitializeComponent();
-            _player = new Player();
-            _player.CurrentHealth = 100;
-            _player.MaximumHealth = 100;
-            _player.Gold = 0;
-            _player.Experience = 1;
-            _player.Level = 1;
+            _player = new Player(0,0,1,100,100);
 
             globalLevelCount.Text = _player.Level.ToString();
             globalExpCount.Text = _player.Experience.ToString();
