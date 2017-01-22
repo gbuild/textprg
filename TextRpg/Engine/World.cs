@@ -57,7 +57,8 @@ namespace Engine
         public const int ITEM_ID_HAGRAVEN_CLAW = 128;
         public const int ITEM_ID_BONEMEAL = 129;
         public const int ITEM_ID_BLEEDINGCROWN = 130;
-        /* Animals Peacefull 0-10 */
+        public const int ITEM_ID_BOAR_TUSK = 131;
+        /* Animals Peacefull 0-20 */
         public const int MONSTER_ID_GOAT = 1;
         public const int MONSTER_ID_COW = 2;
         public const int MONSTER_ID_CHICKEN = 3;
@@ -68,22 +69,122 @@ namespace Engine
         public const int MONSTER_ID_FOX = 8;
         public const int MONSTER_ID_MAMMOTH = 9;
         public const int MONSTER_ID_HAWK = 10;
-        /* Animals Aggresive 10-20 */
-        public const int MONSTER_ID_WHITE_BEAR = 11;
-        public const int MONSTER_ID_HORKER = 12;
-        public const int MONSTER_ID_WOLF = 13;
-        public const int MONSTER_ID_MUD_CRAB = 14;
-        public const int MONSTER_ID_SABRE_CAT = 15;
-        public const int MONSTER_ID_SKEEVER = 16;
-        public const int MONSTER_ID_BEAR = 17;
-        public const int MONSTER_ID_CAVE_BEAR = 18;
-        public const int MONSTER_ID_ICE_WOLF = 19;
-        public const int MONSTER_ID_SNOWY_SABRE_CAT = 20;
-        /* Monsters 20-100 */
-        public const int MONSTER_ID_VAMPIRE = 21;
+        /* Animals Aggresive 20-40 */
+        public const int MONSTER_ID_WHITE_BEAR = 21;
+        public const int MONSTER_ID_WILD_BOAR = 22;
+        public const int MONSTER_ID_WOLF = 23;
+        public const int MONSTER_ID_MUD_CRAB = 24;
+        public const int MONSTER_ID_SABRE_CAT = 25;
+        public const int MONSTER_ID_SKEEVER = 26;
+        public const int MONSTER_ID_BEAR = 27;
+        public const int MONSTER_ID_CAVE_BEAR = 28;
+        public const int MONSTER_ID_ICE_WOLF = 29;
+        public const int MONSTER_ID_SNOWY_SABRE_CAT = 30;
+        /* Monsters 40-100 */
+        public const int MONSTER_ID_VAMPIRE = 41;
+        public const int MONSTER_ID_GIANT = 42;
+        public const int MONSTER_ID_HAGRAVEN = 43;
+        public const int MONSTER_ID_GARGOYLE = 44;
+        public const int MONSTER_ID_DEATH_HOUND = 45;
+        public const int MONSTER_ID_DRAGON = 46;
+        public const int MONSTER_ID_WISP = 47;
+        public const int MONSTER_ID_ICE_WRAITH = 48;
+        public const int MONSTER_ID_FROST_GIANT = 49;
+        public const int MONSTER_ID_FROST_TROLL = 50;
+        public const int MONSTER_ID_MAGIC_ANOMALY = 51;
+        public const int MONSTER_ID_WISP_MOTHER = 52;
+        public const int MONSTER_ID_WERWOLF = 53;
+        public const int MONSTER_ID_SPRIGGAN = 54;
+        public const int MONSTER_ID_TROLL = 55;
+        public const int MONSTER_ID_SKELETON = 56;
+        public const int MONSTER_ID_SPIDER = 57;
+        public const int MONSTER_ID_GIANT_SPIDER = 58;
         /* Quest 0-100 */
-        public const int QUEST_ID = 1;
+        public const int QUEST_ID_COWS_COUNTER_ATTACK = 1;
+        public const int QUEST_ID_SECRET_MEDECINE_OF_THE_FORREST = 2;
+        public const int QUEST_ID_BOARS_GET_WILD = 3;
         /* Location 0-100 */
-        public const int LOCATION_ID = 1;
+        public const int LOCATION_ID_LEVEL_1_DEFAULT_CITY = 1;
+        public const int LOCATION_ID_LEVEL_1_DARK_FOREST = 2;
+        public const int LOCATION_ID_LEVEL_1_HUNTING_GROUNDS = 3;
+        public const int LOCATION_ID_LEVEL_1_IRON_KEEP = 4;
+        public const int LOCATION_ID_LEVEL_1_FOREST = 5;
+        public const int LOCATION_ID_LEVEL_1_TOLBANA = 6;
+        public const int LOCATION_ID_LEVEL_1_DUNGEON = 7;
+
+        static World()
+        {
+            PopulateItems();
+            PopulateMonsters();
+            PopulateQuests();
+            PopulateLocations();
+        }
+        private static void PopulateItems()
+        {
+            Items.Add(new Weapon(ITEM_ID_WOODEN_SWORD, "Деревянный меч", "Деревянных мечей", 5));
+            Items.Add(new Weapon(ITEM_ID_IRON_SWORD, "Железный меч", "Железных мечей", 8));
+            Items.Add(new Weapon(ITEM_ID_STEEL_SWORD, "Стальной меч", "Стальных мечей", 12));
+            Items.Add(new Weapon(ITEM_ID_ORCISH_SWORD, "Орочий меч", "Орочьих мечей", 16));
+            Items.Add(new Weapon(ITEM_ID_DWARVEN_SWORD, "Двемерский меч", "Двемерских мечей", 19));
+        }
+        private static void PopulateMonsters()
+        {
+            Monster wildBoar = new Monster(MONSTER_ID_WILD_BOAR, "Дикий кабан", 2, 27, 30, 10, 10);
+            wildBoar.LootTable.Add(new LootItem(ItemByID(ITEM_ID_BOAR_TUSK), 95, false));
+
+            Monsters.Add(wildBoar);
+        }
+        private static void PopulateQuests()
+        {
+            Quest boarsGetWild = new Quest(QUEST_ID_BOARS_GET_WILD, "Кабаны сошли с ума", "Кабаны посходили с ума и нападают на странников на дороге, принеси мне 10 бивней и я тебе заплачу", 140, 150,0);
+            boarsGetWild.QuestCompletionItems.Add(new QuestCompletionItem(ItemByID(ITEM_ID_BOAR_TUSK), 10));
+
+            Quests.Add(boarsGetWild);
+        }
+        private static void PopulateLocations()
+        {
+            Location level1DefaultCity = new Location(LOCATION_ID_LEVEL_1_DEFAULT_CITY, "Стартовый город", "Город расположенный на 1-м этаже Айнкрада. Имеет большое количество дорог, вымощенных камнем, и средневековых улочек, освещенных уличными огнями");
+            level1DefaultCity.QuestAvailableHere = QuestByID(QUEST_ID_BOARS_GET_WILD);
+            Location level1HuntingGrounds = new Location(LOCATION_ID_LEVEL_1_HUNTING_GROUNDS, "Охотничьи угодья", "Обширная зона охоты для персонажей низкого уровня");
+            level1HuntingGrounds.MonsterLivingHere = MonsterByID(MONSTER_ID_WILD_BOAR);
+
+            Locations.Add(level1DefaultCity);
+            Locations.Add(level1HuntingGrounds);
+        }
+
+        public static Item ItemByID(int id)
+        {
+            foreach (Item item in Items)
+            {
+                if (item.ID == id)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+        public static Monster MonsterByID(int id)
+        {
+            foreach (Monster monster in Monsters)
+            {
+                if (monster.ID == id)
+                {
+                    return monster;
+                }
+            }
+            return null;
+        }
+        public static Quest QuestByID(int id)
+        {
+            foreach (Quest quest in Quests)
+            {
+                if (quest.ID == id)
+                {
+                    return quest;
+                }
+            }
+            return null;
+        }
+
     }
 }
