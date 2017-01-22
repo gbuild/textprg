@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Engine
 {
-    public class Player
+    public class Player : LivingCreature
     {
-        public int CurrentHealth { get; set; }
-        public int MaximumHealth { get; set; }
         public int Gold { get; set; }
         public int Experience{ get; set;}
         public int Level { get; set;}
