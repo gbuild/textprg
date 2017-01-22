@@ -1,6 +1,6 @@
 ﻿namespace TextRpg
 {
-    partial class Form1
+    partial class TextRpg
     {
         /// <summary>
         /// Required designer variable.
