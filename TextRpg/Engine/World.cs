@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
+using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -148,6 +150,8 @@ namespace Engine
             Location level1HuntingGrounds = new Location(LOCATION_ID_LEVEL_1_HUNTING_GROUNDS, "Охотничьи угодья", "Обширная зона охоты для персонажей низкого уровня");
             level1HuntingGrounds.MonsterLivingHere = MonsterByID(MONSTER_ID_WILD_BOAR);
 
+            level1DefaultCity.LocationToNorth = level1HuntingGrounds;
+
             Locations.Add(level1DefaultCity);
             Locations.Add(level1HuntingGrounds);
         }
@@ -181,6 +185,17 @@ namespace Engine
                 if (quest.ID == id)
                 {
                     return quest;
+                }
+            }
+            return null;
+        }
+        public static Location LocationByID(int id)
+        {
+            foreach (Location location in Locations)
+            {
+                if (location.ID == id)
+                {
+                    return location;
                 }
             }
             return null;

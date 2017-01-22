@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatsScreen));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbIcon = new System.Windows.Forms.PictureBox();
             this.globalLevelLabel = new System.Windows.Forms.Label();
             this.globalLevelCount = new System.Windows.Forms.Label();
             this.globalExpLabel = new System.Windows.Forms.Label();
@@ -41,20 +41,20 @@
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.dgbQuests = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgbQuests)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbIcon
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 197);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbIcon.Image = ((System.Drawing.Image)(resources.GetObject("pbIcon.Image")));
+            this.pbIcon.Location = new System.Drawing.Point(12, 12);
+            this.pbIcon.Name = "pbIcon";
+            this.pbIcon.Size = new System.Drawing.Size(208, 197);
+            this.pbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbIcon.TabIndex = 0;
+            this.pbIcon.TabStop = false;
             // 
             // globalLevelLabel
             // 
@@ -180,10 +180,10 @@
             this.Controls.Add(this.globalExpLabel);
             this.Controls.Add(this.globalLevelCount);
             this.Controls.Add(this.globalLevelLabel);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbIcon);
             this.Name = "StatsScreen";
             this.Text = "StatsScreen";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgbQuests)).EndInit();
             this.ResumeLayout(false);
@@ -193,7 +193,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbIcon;
         private System.Windows.Forms.Label globalLevelLabel;
         private System.Windows.Forms.Label globalLevelCount;
         private System.Windows.Forms.Label globalExpLabel;

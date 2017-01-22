@@ -39,12 +39,12 @@
             this.btnUsePotion = new System.Windows.Forms.Button();
             this.rtbMessages = new System.Windows.Forms.RichTextBox();
             this.btnInventory = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSouth = new System.Windows.Forms.Button();
             this.btnWest = new System.Windows.Forms.Button();
             this.btnEast = new System.Windows.Forms.Button();
             this.btnAction = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pbCurrent = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCurrent)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNorth
@@ -55,6 +55,7 @@
             this.btnNorth.TabIndex = 8;
             this.btnNorth.Text = "Север";
             this.btnNorth.UseVisualStyleBackColor = true;
+            this.btnNorth.Click += new System.EventHandler(this.btnNorth_Click);
             // 
             // cboWeapons
             // 
@@ -88,6 +89,7 @@
             this.btnRun.TabIndex = 18;
             this.btnRun.Text = "Убежать";
             this.btnRun.UseVisualStyleBackColor = true;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // btnUseWeapon
             // 
@@ -97,6 +99,7 @@
             this.btnUseWeapon.TabIndex = 19;
             this.btnUseWeapon.Text = "Атака";
             this.btnUseWeapon.UseVisualStyleBackColor = true;
+            this.btnUseWeapon.Click += new System.EventHandler(this.btnUseWeapon_Click);
             // 
             // btnUseSkill
             // 
@@ -106,6 +109,7 @@
             this.btnUseSkill.TabIndex = 20;
             this.btnUseSkill.Text = "Навык";
             this.btnUseSkill.UseVisualStyleBackColor = true;
+            this.btnUseSkill.Click += new System.EventHandler(this.btnUseSkill_Click);
             // 
             // btnUsePotion
             // 
@@ -115,6 +119,7 @@
             this.btnUsePotion.TabIndex = 21;
             this.btnUsePotion.Text = "Лечение";
             this.btnUsePotion.UseVisualStyleBackColor = true;
+            this.btnUsePotion.Click += new System.EventHandler(this.btnUsePotion_Click);
             // 
             // rtbMessages
             // 
@@ -135,16 +140,6 @@
             this.btnInventory.UseVisualStyleBackColor = true;
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(460, 287);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnSouth
             // 
             this.btnSouth.Location = new System.Drawing.Point(504, 69);
@@ -153,6 +148,7 @@
             this.btnSouth.TabIndex = 25;
             this.btnSouth.Text = "Юг";
             this.btnSouth.UseVisualStyleBackColor = true;
+            this.btnSouth.Click += new System.EventHandler(this.btnSouth_Click);
             // 
             // btnWest
             // 
@@ -162,6 +158,7 @@
             this.btnWest.TabIndex = 26;
             this.btnWest.Text = "Запад";
             this.btnWest.UseVisualStyleBackColor = true;
+            this.btnWest.Click += new System.EventHandler(this.btnWest_Click);
             // 
             // btnEast
             // 
@@ -171,6 +168,7 @@
             this.btnEast.TabIndex = 27;
             this.btnEast.Text = "Восток";
             this.btnEast.UseVisualStyleBackColor = true;
+            this.btnEast.Click += new System.EventHandler(this.btnEast_Click);
             // 
             // btnAction
             // 
@@ -180,6 +178,18 @@
             this.btnAction.TabIndex = 28;
             this.btnAction.Text = "Действие";
             this.btnAction.UseVisualStyleBackColor = true;
+            this.btnAction.Click += new System.EventHandler(this.btnAction_Click);
+            // 
+            // pbCurrent
+            // 
+            this.pbCurrent.Image = global::TextRpg.Properties.Resources.level1DefaultCity;
+            this.pbCurrent.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbCurrent.InitialImage")));
+            this.pbCurrent.Location = new System.Drawing.Point(12, 1);
+            this.pbCurrent.Name = "pbCurrent";
+            this.pbCurrent.Size = new System.Drawing.Size(460, 287);
+            this.pbCurrent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCurrent.TabIndex = 24;
+            this.pbCurrent.TabStop = false;
             // 
             // TextRpg
             // 
@@ -190,7 +200,7 @@
             this.Controls.Add(this.btnEast);
             this.Controls.Add(this.btnWest);
             this.Controls.Add(this.btnSouth);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbCurrent);
             this.Controls.Add(this.btnInventory);
             this.Controls.Add(this.rtbMessages);
             this.Controls.Add(this.btnUsePotion);
@@ -203,7 +213,7 @@
             this.Controls.Add(this.btnNorth);
             this.Name = "TextRpg";
             this.Text = "TextRpg";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCurrent)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -219,7 +229,7 @@
         private System.Windows.Forms.Button btnUsePotion;
         private System.Windows.Forms.RichTextBox rtbMessages;
         private System.Windows.Forms.Button btnInventory;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbCurrent;
         private System.Windows.Forms.Button btnSouth;
         private System.Windows.Forms.Button btnWest;
         private System.Windows.Forms.Button btnEast;
