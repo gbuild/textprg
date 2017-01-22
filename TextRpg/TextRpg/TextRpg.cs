@@ -17,13 +17,14 @@ namespace TextRpg
         public TextRpg()
         {
             InitializeComponent();
-            _player = new Player(0,0,1,100,100);
+            _player = new Player(0,0,1,100,100);         
+        }
 
-            globalLevelCount.Text = _player.Level.ToString();
-            globalExpCount.Text = _player.Experience.ToString();
-            globalHealthCount.Text = _player.CurrentHealth.ToString();
-            globalGoldCount.Text = _player.Gold.ToString();
-
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            StatsScreen statsScreen = new StatsScreen(_player);
+            statsScreen.StartPosition = FormStartPosition.CenterParent;
+            statsScreen.ShowDialog(this);
         }
     }
 }

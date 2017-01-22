@@ -28,118 +28,202 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.globalLevelLabel = new System.Windows.Forms.Label();
-            this.globalExpLabel = new System.Windows.Forms.Label();
-            this.globalHealthLabel = new System.Windows.Forms.Label();
-            this.globalGoldLabel = new System.Windows.Forms.Label();
-            this.globalLevelCount = new System.Windows.Forms.Label();
-            this.globalExpCount = new System.Windows.Forms.Label();
-            this.globalHealthCount = new System.Windows.Forms.Label();
-            this.globalGoldCount = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TextRpg));
+            this.btnNorth = new System.Windows.Forms.Button();
+            this.cboWeapons = new System.Windows.Forms.ComboBox();
+            this.cboSkills = new System.Windows.Forms.ComboBox();
+            this.cboPotions = new System.Windows.Forms.ComboBox();
+            this.btnRun = new System.Windows.Forms.Button();
+            this.btnUseWeapon = new System.Windows.Forms.Button();
+            this.btnUseSkill = new System.Windows.Forms.Button();
+            this.btnUsePotion = new System.Windows.Forms.Button();
+            this.rtbMessages = new System.Windows.Forms.RichTextBox();
+            this.btnInventory = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSouth = new System.Windows.Forms.Button();
+            this.btnWest = new System.Windows.Forms.Button();
+            this.btnEast = new System.Windows.Forms.Button();
+            this.btnAction = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // globalLevelLabel
+            // btnNorth
             // 
-            this.globalLevelLabel.AutoSize = true;
-            this.globalLevelLabel.Location = new System.Drawing.Point(12, 9);
-            this.globalLevelLabel.Name = "globalLevelLabel";
-            this.globalLevelLabel.Size = new System.Drawing.Size(57, 13);
-            this.globalLevelLabel.TabIndex = 0;
-            this.globalLevelLabel.Text = "Уровень: ";
+            this.btnNorth.Location = new System.Drawing.Point(504, 12);
+            this.btnNorth.Name = "btnNorth";
+            this.btnNorth.Size = new System.Drawing.Size(75, 41);
+            this.btnNorth.TabIndex = 8;
+            this.btnNorth.Text = "Север";
+            this.btnNorth.UseVisualStyleBackColor = true;
             // 
-            // globalExpLabel
+            // cboWeapons
             // 
-            this.globalExpLabel.AutoSize = true;
-            this.globalExpLabel.Location = new System.Drawing.Point(116, 9);
-            this.globalExpLabel.Name = "globalExpLabel";
-            this.globalExpLabel.Size = new System.Drawing.Size(40, 13);
-            this.globalExpLabel.TabIndex = 1;
-            this.globalExpLabel.Text = "Опыт: ";
+            this.cboWeapons.FormattingEnabled = true;
+            this.cboWeapons.Location = new System.Drawing.Point(491, 303);
+            this.cboWeapons.Name = "cboWeapons";
+            this.cboWeapons.Size = new System.Drawing.Size(121, 21);
+            this.cboWeapons.TabIndex = 15;
             // 
-            // globalHealthLabel
+            // cboSkills
             // 
-            this.globalHealthLabel.AutoSize = true;
-            this.globalHealthLabel.Location = new System.Drawing.Point(445, 9);
-            this.globalHealthLabel.Name = "globalHealthLabel";
-            this.globalHealthLabel.Size = new System.Drawing.Size(62, 13);
-            this.globalHealthLabel.TabIndex = 2;
-            this.globalHealthLabel.Text = "Здоровье: ";
+            this.cboSkills.FormattingEnabled = true;
+            this.cboSkills.Location = new System.Drawing.Point(491, 334);
+            this.cboSkills.Name = "cboSkills";
+            this.cboSkills.Size = new System.Drawing.Size(121, 21);
+            this.cboSkills.TabIndex = 16;
             // 
-            // globalGoldLabel
+            // cboPotions
             // 
-            this.globalGoldLabel.AutoSize = true;
-            this.globalGoldLabel.Location = new System.Drawing.Point(544, 9);
-            this.globalGoldLabel.Name = "globalGoldLabel";
-            this.globalGoldLabel.Size = new System.Drawing.Size(49, 13);
-            this.globalGoldLabel.TabIndex = 3;
-            this.globalGoldLabel.Text = "Золото: ";
+            this.cboPotions.FormattingEnabled = true;
+            this.cboPotions.Location = new System.Drawing.Point(491, 363);
+            this.cboPotions.Name = "cboPotions";
+            this.cboPotions.Size = new System.Drawing.Size(121, 21);
+            this.cboPotions.TabIndex = 17;
             // 
-            // globalLevelCount
+            // btnRun
             // 
-            this.globalLevelCount.AutoSize = true;
-            this.globalLevelCount.Location = new System.Drawing.Point(75, 9);
-            this.globalLevelCount.Name = "globalLevelCount";
-            this.globalLevelCount.Size = new System.Drawing.Size(13, 13);
-            this.globalLevelCount.TabIndex = 4;
-            this.globalLevelCount.Text = "1";
+            this.btnRun.Location = new System.Drawing.Point(537, 406);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(75, 23);
+            this.btnRun.TabIndex = 18;
+            this.btnRun.Text = "Убежать";
+            this.btnRun.UseVisualStyleBackColor = true;
             // 
-            // globalExpCount
+            // btnUseWeapon
             // 
-            this.globalExpCount.AutoSize = true;
-            this.globalExpCount.Location = new System.Drawing.Point(162, 9);
-            this.globalExpCount.Name = "globalExpCount";
-            this.globalExpCount.Size = new System.Drawing.Size(13, 13);
-            this.globalExpCount.TabIndex = 5;
-            this.globalExpCount.Text = "0";
+            this.btnUseWeapon.Location = new System.Drawing.Point(397, 303);
+            this.btnUseWeapon.Name = "btnUseWeapon";
+            this.btnUseWeapon.Size = new System.Drawing.Size(75, 23);
+            this.btnUseWeapon.TabIndex = 19;
+            this.btnUseWeapon.Text = "Атака";
+            this.btnUseWeapon.UseVisualStyleBackColor = true;
             // 
-            // globalHealthCount
+            // btnUseSkill
             // 
-            this.globalHealthCount.AutoSize = true;
-            this.globalHealthCount.Location = new System.Drawing.Point(513, 9);
-            this.globalHealthCount.Name = "globalHealthCount";
-            this.globalHealthCount.Size = new System.Drawing.Size(25, 13);
-            this.globalHealthCount.TabIndex = 6;
-            this.globalHealthCount.Text = "100";
+            this.btnUseSkill.Location = new System.Drawing.Point(397, 332);
+            this.btnUseSkill.Name = "btnUseSkill";
+            this.btnUseSkill.Size = new System.Drawing.Size(75, 23);
+            this.btnUseSkill.TabIndex = 20;
+            this.btnUseSkill.Text = "Навык";
+            this.btnUseSkill.UseVisualStyleBackColor = true;
             // 
-            // globalGoldCount
+            // btnUsePotion
             // 
-            this.globalGoldCount.AutoSize = true;
-            this.globalGoldCount.Location = new System.Drawing.Point(599, 9);
-            this.globalGoldCount.Name = "globalGoldCount";
-            this.globalGoldCount.Size = new System.Drawing.Size(13, 13);
-            this.globalGoldCount.TabIndex = 7;
-            this.globalGoldCount.Text = "0";
+            this.btnUsePotion.Location = new System.Drawing.Point(397, 361);
+            this.btnUsePotion.Name = "btnUsePotion";
+            this.btnUsePotion.Size = new System.Drawing.Size(75, 23);
+            this.btnUsePotion.TabIndex = 21;
+            this.btnUsePotion.Text = "Лечение";
+            this.btnUsePotion.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // rtbMessages
+            // 
+            this.rtbMessages.Location = new System.Drawing.Point(12, 303);
+            this.rtbMessages.Name = "rtbMessages";
+            this.rtbMessages.ReadOnly = true;
+            this.rtbMessages.Size = new System.Drawing.Size(379, 126);
+            this.rtbMessages.TabIndex = 22;
+            this.rtbMessages.Text = "";
+            // 
+            // btnInventory
+            // 
+            this.btnInventory.Location = new System.Drawing.Point(397, 406);
+            this.btnInventory.Name = "btnInventory";
+            this.btnInventory.Size = new System.Drawing.Size(75, 23);
+            this.btnInventory.TabIndex = 23;
+            this.btnInventory.Text = "Инвентарь";
+            this.btnInventory.UseVisualStyleBackColor = true;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(460, 287);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnSouth
+            // 
+            this.btnSouth.Location = new System.Drawing.Point(504, 69);
+            this.btnSouth.Name = "btnSouth";
+            this.btnSouth.Size = new System.Drawing.Size(75, 41);
+            this.btnSouth.TabIndex = 25;
+            this.btnSouth.Text = "Юг";
+            this.btnSouth.UseVisualStyleBackColor = true;
+            // 
+            // btnWest
+            // 
+            this.btnWest.Location = new System.Drawing.Point(504, 125);
+            this.btnWest.Name = "btnWest";
+            this.btnWest.Size = new System.Drawing.Size(75, 41);
+            this.btnWest.TabIndex = 26;
+            this.btnWest.Text = "Запад";
+            this.btnWest.UseVisualStyleBackColor = true;
+            // 
+            // btnEast
+            // 
+            this.btnEast.Location = new System.Drawing.Point(504, 185);
+            this.btnEast.Name = "btnEast";
+            this.btnEast.Size = new System.Drawing.Size(75, 41);
+            this.btnEast.TabIndex = 27;
+            this.btnEast.Text = "Восток";
+            this.btnEast.UseVisualStyleBackColor = true;
+            // 
+            // btnAction
+            // 
+            this.btnAction.Location = new System.Drawing.Point(504, 247);
+            this.btnAction.Name = "btnAction";
+            this.btnAction.Size = new System.Drawing.Size(75, 41);
+            this.btnAction.TabIndex = 28;
+            this.btnAction.Text = "Действие";
+            this.btnAction.UseVisualStyleBackColor = true;
+            // 
+            // TextRpg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 441);
-            this.Controls.Add(this.globalGoldCount);
-            this.Controls.Add(this.globalHealthCount);
-            this.Controls.Add(this.globalExpCount);
-            this.Controls.Add(this.globalLevelCount);
-            this.Controls.Add(this.globalGoldLabel);
-            this.Controls.Add(this.globalHealthLabel);
-            this.Controls.Add(this.globalExpLabel);
-            this.Controls.Add(this.globalLevelLabel);
-            this.Name = "Form1";
+            this.Controls.Add(this.btnAction);
+            this.Controls.Add(this.btnEast);
+            this.Controls.Add(this.btnWest);
+            this.Controls.Add(this.btnSouth);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnInventory);
+            this.Controls.Add(this.rtbMessages);
+            this.Controls.Add(this.btnUsePotion);
+            this.Controls.Add(this.btnUseSkill);
+            this.Controls.Add(this.btnUseWeapon);
+            this.Controls.Add(this.btnRun);
+            this.Controls.Add(this.cboPotions);
+            this.Controls.Add(this.cboSkills);
+            this.Controls.Add(this.cboWeapons);
+            this.Controls.Add(this.btnNorth);
+            this.Name = "TextRpg";
             this.Text = "TextRpg";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label globalLevelLabel;
-        private System.Windows.Forms.Label globalExpLabel;
-        private System.Windows.Forms.Label globalHealthLabel;
-        private System.Windows.Forms.Label globalGoldLabel;
-        private System.Windows.Forms.Label globalLevelCount;
-        private System.Windows.Forms.Label globalExpCount;
-        private System.Windows.Forms.Label globalHealthCount;
-        private System.Windows.Forms.Label globalGoldCount;
+        private System.Windows.Forms.Button btnNorth;
+        private System.Windows.Forms.ComboBox cboWeapons;
+        private System.Windows.Forms.ComboBox cboSkills;
+        private System.Windows.Forms.ComboBox cboPotions;
+        private System.Windows.Forms.Button btnRun;
+        private System.Windows.Forms.Button btnUseWeapon;
+        private System.Windows.Forms.Button btnUseSkill;
+        private System.Windows.Forms.Button btnUsePotion;
+        private System.Windows.Forms.RichTextBox rtbMessages;
+        private System.Windows.Forms.Button btnInventory;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnSouth;
+        private System.Windows.Forms.Button btnWest;
+        private System.Windows.Forms.Button btnEast;
+        private System.Windows.Forms.Button btnAction;
     }
 }
 

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StatsScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatsScreen.Designer.cs">
+      <DependentUpon>StatsScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="TextRpg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="StatsScreen.resx">
+      <DependentUpon>StatsScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TextRpg.resx">
       <DependentUpon>TextRpg.cs</DependentUpon>
     </EmbeddedResource>
