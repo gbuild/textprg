@@ -21,15 +21,16 @@ namespace TextRpg
             UpdateStats(_currentPlayer);
             UpdateInventoryList(_currentPlayer);
             UpdateQuestList(_currentPlayer);
-            pbIcon.Image = Properties.Resources._5435345;
+            //pbIcon.Image = Properties.Resources._5435345;
 
         }
         private void UpdateStats (Player player)
         {
             globalLevelCount.Text = player.Level.ToString();
-            globalExpCount.Text = player.Experience.ToString();
-            globalHealthCount.Text = player.CurrentHealth.ToString();
-            globalGoldCount.Text = player.Gold.ToString();
+            globalExpCount.Visible = false;
+            //globalExpCount.Text = player.Experience.ToString();
+            globalHealthCount.Text = $"{player.CurrentHealth.ToString()}\\{player.MaximumHealth}";
+            globalGoldCount.Text = player.Gold.ToString();            
         }
         private void UpdateInventoryList(Player player)
         {

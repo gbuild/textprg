@@ -21,11 +21,12 @@ namespace Engine
         public Location LocationToEast { get; set; }
         public Image LocationDisplayImage { get; set; }
 
-        public Location(int id, string name, string description, Quest questAvailableHere = null, Monster monsterLivingHere = null)
+        public Location(int id, string name, string description, Image locationDisplayImage = null, Quest questAvailableHere = null, Monster monsterLivingHere = null)
         {
             ID = id;
             Name = name;
             Description = description;
+            LocationDisplayImage = locationDisplayImage;
         }
     }
 }

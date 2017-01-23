@@ -159,24 +159,24 @@ namespace Engine
         }
         private static void PopulateLocations()
         {
-            Location level1DefaultCity = new Location(LOCATION_ID_LEVEL_1_DEFAULT_CITY, "Стартовый город", "Город расположенный на 1-м этаже Айнкрада. Имеет большое количество дорог, вымощенных камнем, и средневековых улочек, освещенных уличными огнями");           
-            Location level1DefaultCityInn = new Location(LOCATION_ID_LEVEL_1_DEFAULT_CITY_INN, "Таверна", "Внутри таверны чисто, уютно и тепло, в очаге жарко горит огонь. На стенах висят гобелены и картины с видами Айнкрада. ");
+            Location level1DefaultCity = new Location(LOCATION_ID_LEVEL_1_DEFAULT_CITY, "Стартовый город", "Город расположенный на 1-м этаже Айнкрада. Имеет большое количество дорог, вымощенных камнем, и средневековых улочек, освещенных уличными огнями", Properties.Resources.level1DefaultCity);
+            Location level1DefaultCityInn = new Location(LOCATION_ID_LEVEL_1_DEFAULT_CITY_INN, "Таверна", "Внутри таверны чисто, уютно и тепло, в очаге жарко горит огонь. На стенах висят гобелены и картины с видами Айнкрада. ", Properties.Resources.level1DefaultCityInn);
             level1DefaultCityInn.QuestAvailableHere = QuestByID(QUEST_ID_BOARS_GET_WILD);
-            Location level1DefaulCityMarket = new Location(LOCATION_ID_LEVEL_1_DEFAULT_CITY_MARKET, "Рыночная площадь", "Самая большая торговая площадь в Айнкраде, которая славится тем, что здесь много торговцев, торгующих редкими вещами, порой даже запрещенными. Тут можно найти абсолютно все: от продуктов питания до легендарного оружия с боссов ");
-            Location level1DefaulCityIronKeep = new Location(LOCATION_ID_LEVEL_1_DEFAULT_CITY_IRON_KEEP, "Железный дворец", "Штаб квартира гильдии Армия освобождения Айнкрада");
-            Location level1MonumentOfLife = new Location(LOCATION_ID_LEVEL_1_MONUMENTOFLIFE, "Монумент жизни", "Крупная каменная тибличка. На ней высечены имена всех игроков.");
-            Location level1Church = new Location(LOCATION_ID_LEVEL_1_CHURCH, "Церковь", "Прибежище всех страждующих");
-            Location level1HuntingGrounds = new Location(LOCATION_ID_LEVEL_1_HUNTING_GROUNDS, "Охотничьи угодья", "Обширная зона охоты для персонажей низкого уровня");
+            Location level1DefaulCityMarket = new Location(LOCATION_ID_LEVEL_1_DEFAULT_CITY_MARKET, "Рыночная площадь", "Самая большая торговая площадь в Айнкраде, которая славится тем, что здесь много торговцев, торгующих редкими вещами, порой даже запрещенными. Тут можно найти абсолютно все: от продуктов питания до легендарного оружия с боссов ", Properties.Resources.level1DefaultCityMarket);
+            Location level1DefaulCityIronKeep = new Location(LOCATION_ID_LEVEL_1_DEFAULT_CITY_IRON_KEEP, "Железный дворец", "Штаб квартира гильдии Армия освобождения Айнкрада",Properties.Resources.level1IronKeep);
+            Location level1MonumentOfLife = new Location(LOCATION_ID_LEVEL_1_MONUMENTOFLIFE, "Монумент жизни", "Крупная каменная тибличка. На ней высечены имена всех игроков.", Properties.Resources.level1MonumentOfLife);
+            Location level1Church = new Location(LOCATION_ID_LEVEL_1_CHURCH, "Церковь", "Прибежище всех страждующих", Properties.Resources.level1Church);
+            Location level1HuntingGrounds = new Location(LOCATION_ID_LEVEL_1_HUNTING_GROUNDS, "Охотничьи угодья", "Обширная зона охоты для персонажей низкого уровня", Properties.Resources.level1HuntingGrounds);
             level1HuntingGrounds.MonsterLivingHere = MonsterByID(MONSTER_ID_WILD_BOAR);
-            Location level1Lake = new Location(LOCATION_ID_LEVEL_1_LAKE, "Озеро", "");
-            Location level1Forest = new Location(LOCATION_ID_LEVEL_1_FOREST, "Лес", "");
+            Location level1Lake = new Location(LOCATION_ID_LEVEL_1_LAKE, "Озеро", "", Properties.Resources.level1Lake);
+            Location level1Forest = new Location(LOCATION_ID_LEVEL_1_FOREST, "Лес", "", Properties.Resources.level1Forest);
             Location level1Horunka = new Location(LOCATION_ID_LEVEL_1_HORUNKA, "Хорунка", "");
             Location level1HorunkaCentralSquare = new Location(LOCATION_ID_LEVEL_1_HORUNKA_CENTRAL_SQUARE, "Центральная площадь", "");
             Location level1HorunkaShop = new Location(LOCATION_ID_LEVEL_1_HORUNKA_SHOP, "Магазин", "");
             Location level1HorunkaInn = new Location(LOCATION_ID_LEVEL_1_HORUNKA_INN, "Таверна", "");
-            Location level1DarkForest = new Location(LOCATION_ID_LEVEL_1_DARK_FOREST, "Тёмный лес", "");
+            Location level1DarkForest = new Location(LOCATION_ID_LEVEL_1_DARK_FOREST, "Тёмный лес", "", Properties.Resources.level1Forest2);
             Location level1Tolbana = new Location(LOCATION_ID_LEVEL_1_TOLBANA, "Толбана", "");
-            Location level1TolbanaCentralSquare = new Location(LOCATION_ID_LEVEL_1_TOLBANA_CENTRAL_SQUARE, "Центральная площадь", "");
+            Location level1TolbanaCentralSquare = new Location(LOCATION_ID_LEVEL_1_TOLBANA_CENTRAL_SQUARE, "Центральная площадь Толбаны", "", Properties.Resources.level1TolbanaCentralSquare);
             Location level1TolbanaWeaponShop = new Location(LOCATION_ID_LEVEL_1_TOLBANA_WEAPONSHOP, "Оружейный магазин", "");
             Location level1TolbanaInn = new Location(LOCATION_ID_LEVEL_1_TOLBANA_INN, "Таверна", "");
             Location level1Dungeon = new Location(LOCATION_ID_LEVEL_1_DUNGEON, "Данж", "");

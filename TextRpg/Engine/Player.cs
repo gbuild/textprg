@@ -10,20 +10,18 @@ namespace Engine
     {
         public int Gold { get; set; }
         public int Experience{ get; set;}
-        public int Level { get; set;}
+        public int Level { get { return ((Experience / 500) + 1); } }
         public Location CurrentLocation { get; set; }
         public List<InventoryItem> Inventory { get; set; }
         public List<PlayerQuest> Quests { get; set; }
 
-        public Player (int gold, int experience, int level, int currentHealth, int maximumHealth) :base(currentHealth,maximumHealth)
+        public Player (int gold, int experience, int currentHealth, int maximumHealth) :base(currentHealth,maximumHealth)
         {
             Gold = gold;
             Experience = experience;
-            Level = level;
             Inventory = new List<InventoryItem>();
             Quests = new List<PlayerQuest>();
         }
-
         public bool HasThisQuest(Quest quest)
         {
             foreach (PlayerQuest playerQuest in Quests)

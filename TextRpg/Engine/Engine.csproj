@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,15 +49,71 @@
     <Compile Include="LivingCreature.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="LootItem.cs" />
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Monster.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerQuest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Quest.cs" />
     <Compile Include="QuestCompletionItem.cs" />
     <Compile Include="RandomNumberGenerator.cs" />
     <Compile Include="Weapon.cs" />
     <Compile Include="World.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1DefaultCity.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1IronKeep.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1Church.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1DefaultCityInn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1DefaultCityMarket.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1Forest.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1Forest2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1HuntingGrounds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1Lake.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1MonumentOfLife.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1TolbanaCentralSquare.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

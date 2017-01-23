@@ -21,7 +21,7 @@ namespace TextRpg
         public TextRpg()
         {     
             InitializeComponent();
-            _player = new Player(0,0,1,100,100);
+            _player = new Player(0,0,100,100);
             _player.Inventory.Add(new InventoryItem(World.ItemByID(World.ITEM_ID_WOODEN_SWORD), 1));
             MoveTo(World.LocationByID(World.LOCATION_ID_LEVEL_1_DEFAULT_CITY));
             images = new List<Bitmap>();
@@ -105,7 +105,6 @@ namespace TextRpg
                 cboWeapons.SelectedIndex = 0;
             }
         }
-
         private void MoveTo(Location newLocation)
         {
             _player.CurrentLocation = newLocation;
@@ -192,7 +191,6 @@ namespace TextRpg
             }
             UpdateWeaponList();
             UpdatePotionList();
-            pbCurrent.Image = Properties.Resources.level1DefaultCity;
 
         }
 
@@ -299,6 +297,12 @@ namespace TextRpg
         private void btnRun_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void rtbMessages_TextChanged(object sender, EventArgs e)
+        {
+            rtbMessages.SelectionStart = rtbMessages.Text.Length;
+            rtbMessages.ScrollToCaret();
         }
     }
 }

@@ -129,6 +129,7 @@
             this.rtbMessages.Size = new System.Drawing.Size(379, 126);
             this.rtbMessages.TabIndex = 22;
             this.rtbMessages.Text = "";
+            this.rtbMessages.TextChanged += new System.EventHandler(this.rtbMessages_TextChanged);
             // 
             // btnInventory
             // 
@@ -182,7 +183,6 @@
             // 
             // pbCurrent
             // 
-            this.pbCurrent.Image = global::TextRpg.Properties.Resources.level1DefaultCity;
             this.pbCurrent.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbCurrent.InitialImage")));
             this.pbCurrent.Location = new System.Drawing.Point(12, 1);
             this.pbCurrent.Name = "pbCurrent";
@@ -212,6 +212,9 @@
             this.Controls.Add(this.cboWeapons);
             this.Controls.Add(this.btnNorth);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TextRpg";
             this.Text = "TextRpg";
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrent)).EndInit();

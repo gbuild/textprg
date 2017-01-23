@@ -96,9 +96,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\level1DefaultCity.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\5435345.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
