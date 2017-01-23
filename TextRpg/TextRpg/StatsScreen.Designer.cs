@@ -49,7 +49,7 @@
             // pbIcon
             // 
             this.pbIcon.Image = ((System.Drawing.Image)(resources.GetObject("pbIcon.Image")));
-            this.pbIcon.Location = new System.Drawing.Point(12, 12);
+            this.pbIcon.Location = new System.Drawing.Point(10, 10);
             this.pbIcon.Name = "pbIcon";
             this.pbIcon.Size = new System.Drawing.Size(208, 197);
             this.pbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -134,11 +134,11 @@
             this.dgvInventory.AllowUserToDeleteRows = false;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvInventory.Location = new System.Drawing.Point(12, 234);
+            this.dgvInventory.Location = new System.Drawing.Point(10, 230);
             this.dgvInventory.MultiSelect = false;
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.ReadOnly = true;
-            this.dgvInventory.Size = new System.Drawing.Size(317, 195);
+            this.dgvInventory.Size = new System.Drawing.Size(320, 200);
             this.dgvInventory.TabIndex = 12;
             // 
             // dgbQuests
@@ -147,11 +147,11 @@
             this.dgbQuests.AllowUserToDeleteRows = false;
             this.dgbQuests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgbQuests.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgbQuests.Location = new System.Drawing.Point(347, 234);
+            this.dgbQuests.Location = new System.Drawing.Point(352, 230);
             this.dgbQuests.MultiSelect = false;
             this.dgbQuests.Name = "dgbQuests";
             this.dgbQuests.ReadOnly = true;
-            this.dgbQuests.Size = new System.Drawing.Size(265, 151);
+            this.dgbQuests.Size = new System.Drawing.Size(260, 150);
             this.dgbQuests.TabIndex = 13;
             // 
             // btnClose

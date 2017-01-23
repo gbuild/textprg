@@ -67,98 +67,27 @@ namespace TextRpg
             rtbMessages.Text += newLocation.Description + Environment.NewLine;
             if(newLocation.QuestAvailableHere!=null)
             {
-                bool playerAlreadyHasQuest = false;
-                bool playerAlreadyCompeletedQuest = false;
-                foreach(PlayerQuest playerQuest in _player.Quests)
-                {
-                    if(playerQuest.Details.ID == newLocation.QuestAvailableHere.ID)
-                    {
-                        playerAlreadyHasQuest = true;
-                        
-                        if (playerQuest.IsCompleted)
-                        {
-                            playerAlreadyCompeletedQuest = true;
-                        }                     
-                    }
-                }
+                bool playerAlreadyHasQuest = _player.HasThisQuest(newLocation.QuestAvailableHere) ;
+                bool playerAlreadyCompeletedQuest = _player.CompletedThisQuest(newLocation.QuestAvailableHere);
 
                 if (playerAlreadyHasQuest)
                 {
                     if (!playerAlreadyCompeletedQuest)
                     {
-                        bool playerHasAllItemsToCopleteQuest = true;
-                        foreach (QuestCompletionItem qci in newLocation.QuestAvailableHere.QuestCompletionItems)
-                        {
-                            bool foundItemInPlayersInventory = false;
-                            foreach (InventoryItem ii in _player.Inventory)
-                            {
-                                if (ii.Details.ID == qci.Details.ID)
-                                {
-                                    foundItemInPlayersInventory = true;
-                                    if (ii.Quantity < qci.Quantity)
-                                    {
-                                        playerHasAllItemsToCopleteQuest = false;
-                                        break;
-                                    }
-                                    break;
-                                }
-                            }
-
-                            if (!foundItemInPlayersInventory)
-                            {
-                                playerHasAllItemsToCopleteQuest = false;
-                                break;
-                            }
-                        }
-
+                        bool playerHasAllItemsToCopleteQuest = _player.HasAllQuestCompletionItems(newLocation.QuestAvailableHere);
                         if (playerHasAllItemsToCopleteQuest)
                         {
                             rtbMessages.Text += Environment.NewLine;
                             rtbMessages.Text += $"Вы выполнили {newLocation.QuestAvailableHere.Name} квест. " + Environment.NewLine;
-                            foreach (QuestCompletionItem qci in newLocation.QuestAvailableHere.QuestCompletionItems)
-                            {
-                                foreach (InventoryItem ii in _player.Inventory)
-                                {
-                                    if (ii.Details.ID == qci.Details.ID)
-                                    {
-                                        ii.Quantity -= qci.Quantity;
-                                        break;
-                                    }
-                                }
-                            }
+                            _player.RemoveQuestCompletionItems(newLocation.QuestAvailableHere);
                             rtbMessages.Text += "Вы получили: " + Environment.NewLine;
                             rtbMessages.Text += newLocation.QuestAvailableHere.RewardExperience.ToString() + " очков опыта " + Environment.NewLine;
                             rtbMessages.Text += newLocation.QuestAvailableHere.RewardGold.ToString() + " золота " + Environment.NewLine;
                             rtbMessages.Text += newLocation.QuestAvailableHere.RewardItem.Name + Environment.NewLine;
-
                             _player.Experience += newLocation.QuestAvailableHere.RewardExperience;
                             _player.Gold += newLocation.QuestAvailableHere.RewardGold;
-
-                            bool addedItemToPlayerInventory = false;
-
-                            foreach (InventoryItem ii in _player.Inventory)
-                            {
-                                if (ii.Details.ID == newLocation.QuestAvailableHere.RewardItem.ID)
-                                {
-                                    ii.Quantity++;
-                                    addedItemToPlayerInventory = true;
-                                    break;
-                                }
-                            }
-
-                            if (!addedItemToPlayerInventory)
-                            {
-                                _player.Inventory.Add(new InventoryItem(newLocation.QuestAvailableHere.RewardItem, 1));
-                            }
-
-                            foreach (PlayerQuest pq in _player.Quests)
-                            {
-                                if (pq.Details.ID == newLocation.QuestAvailableHere.ID)
-                                {
-                                    pq.IsCompleted = true;
-                                    break;
-                                }
-                            }
+                            _player.AddItemToInventory(newLocation.QuestAvailableHere.RewardItem);
+                            _player.MarkQuestCompleted(newLocation.QuestAvailableHere);
                         }
                     }
                 }
@@ -208,6 +137,52 @@ namespace TextRpg
                 btnUseWeapon.Visible = false;
                 btnUseSkill.Visible = false;
                 btnUsePotion.Visible = false;
+            }
+            List<Weapon> weapons = new List<Weapon>();
+            foreach (InventoryItem inventoryItem in _player.Inventory)
+            {
+                if (inventoryItem.Details is Weapon)
+                {
+                    if (inventoryItem.Quantity > 0)
+                    {
+                        weapons.Add((Weapon)inventoryItem.Details);
+                    }
+                }
+            }
+            if (weapons.Count ==0)
+            {
+                cboWeapons.Visible = false;
+                btnUseWeapon.Visible = false;
+            }
+            else
+            {
+                cboWeapons.DataSource = weapons;
+                cboWeapons.DisplayMember = "Name";
+                cboWeapons.ValueMember = "ID";
+                cboWeapons.SelectedIndex = 0;
+            }
+            List<HealingPotion> healingPotions = new List<HealingPotion>();
+            foreach(InventoryItem inventoryItem in _player.Inventory)
+            {
+                if(inventoryItem.Details is HealingPotion)
+                {
+                    if (inventoryItem.Quantity >0)
+                    {
+                        healingPotions.Add((HealingPotion)inventoryItem.Details);
+                    }
+                }
+            }
+            if (healingPotions.Count == 0)
+            {
+                cboPotions.Visible = false;
+                btnUsePotion.Visible = false;
+            }
+            else
+            {
+                cboPotions.DataSource = healingPotions;
+                cboPotions.DisplayMember = "Name";
+                cboPotions.ValueMember = "ID";
+                cboPotions.SelectedIndex = 0;
             }
             pbCurrent.Image = Properties.Resources.level1DefaultCity;
 

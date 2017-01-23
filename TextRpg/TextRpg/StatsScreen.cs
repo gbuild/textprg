@@ -21,7 +21,32 @@ namespace TextRpg
             globalLevelCount.Text = player.Level.ToString();
             globalExpCount.Text = player.Experience.ToString();
             globalHealthCount.Text = player.CurrentHealth.ToString();
-            globalGoldCount.Text = player.Gold.ToString();       
+            globalGoldCount.Text = player.Gold.ToString();
+            dgvInventory.RowHeadersVisible = false;
+            dgvInventory.ColumnCount = 2;
+            dgvInventory.Columns[0].Name = "Название";
+            dgvInventory.Columns[0].Width = 220;
+            dgvInventory.Columns[1].Name = "Колличество";
+            dgvInventory.Columns[1].Width = 96;
+            dgvInventory.Rows.Clear();
+            foreach (InventoryItem inventoryItem in player.Inventory)
+            {
+                if(inventoryItem.Quantity >0)
+                {
+                    dgvInventory.Rows.Add(new[] { inventoryItem.Details.Name, inventoryItem.Quantity.ToString() });
+                }
+            }
+            dgbQuests.RowHeadersVisible = false;
+            dgbQuests.ColumnCount = 2;
+            dgbQuests.Columns[0].Name = "Название";
+            dgbQuests.Columns[0].Width = 160;
+            dgbQuests.Columns[1].Name = "Выполнено";
+            dgbQuests.Columns[1].Width = 96;
+            dgbQuests.Rows.Clear();
+            foreach (PlayerQuest playerQuest in player.Quests)
+            {
+                dgbQuests.Rows.Add(new[] { playerQuest.Details.Name, playerQuest.IsCompleted.ToString() });
+            }
             pbIcon.Image = Properties.Resources._5435345;
 
         }
