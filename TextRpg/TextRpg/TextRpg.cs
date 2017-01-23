@@ -53,6 +53,58 @@ namespace TextRpg
         {
             MoveTo(_player.CurrentLocation.LocationToEast);
         }
+        private void UpdatePotionList ()
+        {
+            List<HealingPotion> healingPotions = new List<HealingPotion>();
+            foreach (InventoryItem inventoryItem in _player.Inventory)
+            {
+                if (inventoryItem.Details is HealingPotion)
+                {
+                    if (inventoryItem.Quantity > 0)
+                    {
+                        healingPotions.Add((HealingPotion)inventoryItem.Details);
+                    }
+                }
+            }
+            if (healingPotions.Count == 0)
+            {
+                cboPotions.Visible = false;
+                btnUsePotion.Visible = false;
+            }
+            else
+            {
+                cboPotions.DataSource = healingPotions;
+                cboPotions.DisplayMember = "Name";
+                cboPotions.ValueMember = "ID";
+                cboPotions.SelectedIndex = 0;
+            }
+        }
+        private void UpdateWeaponList ()
+        {
+            List<Weapon> weapons = new List<Weapon>();
+            foreach (InventoryItem inventoryItem in _player.Inventory)
+            {
+                if (inventoryItem.Details is Weapon)
+                {
+                    if (inventoryItem.Quantity > 0)
+                    {
+                        weapons.Add((Weapon)inventoryItem.Details);
+                    }
+                }
+            }
+            if (weapons.Count == 0)
+            {
+                cboWeapons.Visible = false;
+                btnUseWeapon.Visible = false;
+            }
+            else
+            {
+                cboWeapons.DataSource = weapons;
+                cboWeapons.DisplayMember = "Name";
+                cboWeapons.ValueMember = "ID";
+                cboWeapons.SelectedIndex = 0;
+            }
+        }
 
         private void MoveTo(Location newLocation)
         {
@@ -138,64 +190,78 @@ namespace TextRpg
                 btnUseSkill.Visible = false;
                 btnUsePotion.Visible = false;
             }
-            List<Weapon> weapons = new List<Weapon>();
-            foreach (InventoryItem inventoryItem in _player.Inventory)
-            {
-                if (inventoryItem.Details is Weapon)
-                {
-                    if (inventoryItem.Quantity > 0)
-                    {
-                        weapons.Add((Weapon)inventoryItem.Details);
-                    }
-                }
-            }
-            if (weapons.Count ==0)
-            {
-                cboWeapons.Visible = false;
-                btnUseWeapon.Visible = false;
-            }
-            else
-            {
-                cboWeapons.DataSource = weapons;
-                cboWeapons.DisplayMember = "Name";
-                cboWeapons.ValueMember = "ID";
-                cboWeapons.SelectedIndex = 0;
-            }
-            List<HealingPotion> healingPotions = new List<HealingPotion>();
-            foreach(InventoryItem inventoryItem in _player.Inventory)
-            {
-                if(inventoryItem.Details is HealingPotion)
-                {
-                    if (inventoryItem.Quantity >0)
-                    {
-                        healingPotions.Add((HealingPotion)inventoryItem.Details);
-                    }
-                }
-            }
-            if (healingPotions.Count == 0)
-            {
-                cboPotions.Visible = false;
-                btnUsePotion.Visible = false;
-            }
-            else
-            {
-                cboPotions.DataSource = healingPotions;
-                cboPotions.DisplayMember = "Name";
-                cboPotions.ValueMember = "ID";
-                cboPotions.SelectedIndex = 0;
-            }
+            UpdateWeaponList();
+            UpdatePotionList();
             pbCurrent.Image = Properties.Resources.level1DefaultCity;
 
         }
 
         private void btnAction_Click(object sender, EventArgs e)
         {
-
+            MoveTo(_player.CurrentLocation);
         }
 
         private void btnUseWeapon_Click(object sender, EventArgs e)
         {
-
+            Weapon currentWeapon = (Weapon)cboWeapons.SelectedItem;
+            int damageToMonster = currentWeapon.Damage;
+            _currentMonster.CurrentHealth -= damageToMonster;
+            rtbMessages.Text += $"Вы нанесли цели {_currentMonster.Name} {damageToMonster.ToString()} едениц урона. " +Environment.NewLine;
+            if(_currentMonster.CurrentHealth <= 0)
+            {
+                rtbMessages.Text += Environment.NewLine;
+                rtbMessages.Text += $"Вы одержали победу над {_currentMonster.Name}" + Environment.NewLine;
+                _player.Experience += _currentMonster.RewardExperinece;
+                rtbMessages.Text += $"За победу вы получили {_currentMonster.RewardExperinece.ToString()} едениц опыта." + Environment.NewLine;
+                _player.Gold += _currentMonster.RewardGold;
+                rtbMessages.Text += $"У противника вы нашли {_currentMonster.RewardGold.ToString()} золотых монет"+Environment.NewLine;
+                List<InventoryItem> lootedItems = new List<InventoryItem>();
+                foreach (LootItem lootitem in _currentMonster.LootTable)
+                {
+                    if(RandomNumberGenerator.NumberBetween(1,100)<= lootitem.DropPercentage)
+                    {
+                        lootedItems.Add(new InventoryItem(lootitem.Details, 1));
+                    }
+                }
+                if (lootedItems.Count == 0)
+                {
+                    foreach(LootItem lootItem in _currentMonster.LootTable)
+                    {
+                        if (lootItem.IsDefaultItem)
+                        {
+                            lootedItems.Add(new InventoryItem(lootItem.Details, 1));
+                        }
+                    }
+                }
+                foreach (InventoryItem inventoryItem in lootedItems)
+                {
+                    _player.AddItemToInventory(inventoryItem.Details);
+                    if (inventoryItem.Quantity == 1)
+                    {
+                        rtbMessages.Text += $"Вы нашли {inventoryItem.Quantity.ToString()} {inventoryItem.Details.Name}" + Environment.NewLine;
+                    }
+                    else
+                    {
+                        rtbMessages.Text += $"Вы нашли {inventoryItem.Quantity.ToString()}  {inventoryItem.Details.NamePlural}" + Environment.NewLine;
+                    }
+                }
+                UpdatePotionList();
+                UpdateWeaponList();
+                rtbMessages.Text += Environment.NewLine;
+                btnUseWeapon.Visible = false;
+                //MoveTo(_player.CurrentLocation);            
+            }
+            else
+            {
+                int damageToPlayer = _currentMonster.Damage;
+                rtbMessages.Text += $"Ваш противник {_currentMonster.Name} нанёс вам {damageToPlayer.ToString()} едениц урона." + Environment.NewLine;
+                _player.CurrentHealth -= damageToPlayer;
+                if(_player.CurrentHealth <= 0)
+                {
+                    rtbMessages.Text += $"Вас убил {_currentMonster.Name}" + Environment.NewLine;
+                    MoveTo(World.LocationByID(World.LOCATION_ID_LEVEL_1_MONUMENTOFLIFE));
+                }
+            }
         }
 
         private void btnUseSkill_Click(object sender, EventArgs e)
@@ -205,7 +271,29 @@ namespace TextRpg
 
         private void btnUsePotion_Click(object sender, EventArgs e)
         {
-
+            HealingPotion potion = (HealingPotion)cboPotions.SelectedItem;
+            _player.CurrentHealth = (_player.CurrentHealth + potion.AmountToHeal);
+            if (_player.CurrentHealth>_player.MaximumHealth)
+            {
+                _player.CurrentHealth = _player.MaximumHealth;
+            }
+            foreach(InventoryItem ii in _player.Inventory)
+            {
+                if (ii.Details.ID == potion.ID)
+                {
+                    ii.Quantity--;
+                    break;
+                }
+            }
+            rtbMessages.Text += $"Вы использовали {potion.Name}." + Environment.NewLine;
+            int damageToPlayer = _currentMonster.Damage;
+            rtbMessages.Text += $"{_currentMonster.Name} нанёс вам {damageToPlayer.ToString()} едениц урона."+Environment.NewLine;
+            _player.CurrentHealth -= damageToPlayer;
+            if (_player.CurrentHealth <= 0)
+            {
+                rtbMessages.Text += $"Вас убил {_currentMonster.Name}" + Environment.NewLine;
+                MoveTo(World.LocationByID(World.LOCATION_ID_LEVEL_1_MONUMENTOFLIFE));
+            }
         }
 
         private void btnRun_Click(object sender, EventArgs e)

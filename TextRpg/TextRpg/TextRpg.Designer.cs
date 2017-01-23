@@ -176,7 +176,7 @@
             this.btnAction.Name = "btnAction";
             this.btnAction.Size = new System.Drawing.Size(75, 41);
             this.btnAction.TabIndex = 28;
-            this.btnAction.Text = "Действие";
+            this.btnAction.Text = "Поиск";
             this.btnAction.UseVisualStyleBackColor = true;
             this.btnAction.Click += new System.EventHandler(this.btnAction_Click);
             // 

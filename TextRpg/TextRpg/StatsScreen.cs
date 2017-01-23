@@ -18,10 +18,21 @@ namespace TextRpg
         {
             _currentPlayer = player;
             InitializeComponent();
+            UpdateStats(_currentPlayer);
+            UpdateInventoryList(_currentPlayer);
+            UpdateQuestList(_currentPlayer);
+            pbIcon.Image = Properties.Resources._5435345;
+
+        }
+        private void UpdateStats (Player player)
+        {
             globalLevelCount.Text = player.Level.ToString();
             globalExpCount.Text = player.Experience.ToString();
             globalHealthCount.Text = player.CurrentHealth.ToString();
             globalGoldCount.Text = player.Gold.ToString();
+        }
+        private void UpdateInventoryList(Player player)
+        {
             dgvInventory.RowHeadersVisible = false;
             dgvInventory.ColumnCount = 2;
             dgvInventory.Columns[0].Name = "Название";
@@ -31,11 +42,14 @@ namespace TextRpg
             dgvInventory.Rows.Clear();
             foreach (InventoryItem inventoryItem in player.Inventory)
             {
-                if(inventoryItem.Quantity >0)
+                if (inventoryItem.Quantity > 0)
                 {
                     dgvInventory.Rows.Add(new[] { inventoryItem.Details.Name, inventoryItem.Quantity.ToString() });
                 }
             }
+        }
+        private void UpdateQuestList(Player player)
+        {
             dgbQuests.RowHeadersVisible = false;
             dgbQuests.ColumnCount = 2;
             dgbQuests.Columns[0].Name = "Название";
@@ -47,8 +61,6 @@ namespace TextRpg
             {
                 dgbQuests.Rows.Add(new[] { playerQuest.Details.Name, playerQuest.IsCompleted.ToString() });
             }
-            pbIcon.Image = Properties.Resources._5435345;
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
