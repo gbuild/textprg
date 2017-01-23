@@ -140,6 +140,8 @@ namespace Engine
             Items.Add(new Weapon(ITEM_ID_STEEL_SWORD, "Стальной меч", "Стальных мечей", 12));
             Items.Add(new Weapon(ITEM_ID_ORCISH_SWORD, "Орочий меч", "Орочьих мечей", 16));
             Items.Add(new Weapon(ITEM_ID_DWARVEN_SWORD, "Двемерский меч", "Двемерских мечей", 19));
+
+            Items.Add(new Item(ITEM_ID_BOAR_TUSK, "Бивень кабана", "Бивней кабана"));
         }
         private static void PopulateMonsters()
         {
@@ -150,9 +152,9 @@ namespace Engine
         }
         private static void PopulateQuests()
         {
-            Quest boarsGetWild = new Quest(QUEST_ID_BOARS_GET_WILD, "Кабаны сошли с ума", "Кабаны посходили с ума и нападают на странников на дороге, принеси мне 10 бивней и я тебе заплачу", 140, 150,0);
+            Quest boarsGetWild = new Quest(QUEST_ID_BOARS_GET_WILD, "Кабаны сошли с ума", "Кабаны посходили с ума и нападают на странников на дороге, принеси мне 10 бивней и я тебе заплачу.", 140, 150);
             boarsGetWild.QuestCompletionItems.Add(new QuestCompletionItem(ItemByID(ITEM_ID_BOAR_TUSK), 10));
-
+            boarsGetWild.RewardItem = ItemByID(ITEM_ID_STEEL_SWORD);
             Quests.Add(boarsGetWild);
         }
         private static void PopulateLocations()

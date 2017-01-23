@@ -21,7 +21,7 @@ namespace TextRpg
             globalLevelCount.Text = player.Level.ToString();
             globalExpCount.Text = player.Experience.ToString();
             globalHealthCount.Text = player.CurrentHealth.ToString();
-            globalGoldCount.Text = player.Gold.ToString();
+            globalGoldCount.Text = player.Gold.ToString();       
             pbIcon.Image = Properties.Resources._5435345;
 
         }

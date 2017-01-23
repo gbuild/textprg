@@ -13,17 +13,16 @@ namespace Engine
         public string Description { get; set; }
         public int RewardExperience { get; set; }
         public int RewardGold { get; set; }
-        public int RewardItem { get; set; }
+        public Item RewardItem { get; set; }
         public List<QuestCompletionItem> QuestCompletionItems { get; set; }
 
-        public Quest(int id, string name, string description, int rewardExperience, int rewardGold, int rewardItem)
+        public Quest(int id, string name, string description, int rewardExperience, int rewardGold)
         {
             ID = id;
             Name = name;
             Description = description;
             RewardExperience = rewardExperience;
             RewardGold = rewardGold;
-            RewardItem = rewardItem;
             QuestCompletionItems = new List<QuestCompletionItem>();
         }
     }
