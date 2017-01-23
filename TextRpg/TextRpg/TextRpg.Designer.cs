@@ -211,6 +211,7 @@
             this.Controls.Add(this.cboSkills);
             this.Controls.Add(this.cboWeapons);
             this.Controls.Add(this.btnNorth);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TextRpg";
             this.Text = "TextRpg";
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrent)).EndInit();

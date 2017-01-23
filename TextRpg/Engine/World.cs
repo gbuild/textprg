@@ -109,10 +109,22 @@ namespace Engine
         public const int LOCATION_ID_LEVEL_1_DEFAULT_CITY = 1;
         public const int LOCATION_ID_LEVEL_1_DARK_FOREST = 2;
         public const int LOCATION_ID_LEVEL_1_HUNTING_GROUNDS = 3;
-        public const int LOCATION_ID_LEVEL_1_IRON_KEEP = 4;
+        public const int LOCATION_ID_LEVEL_1_DEFAULT_CITY_IRON_KEEP = 4;
         public const int LOCATION_ID_LEVEL_1_FOREST = 5;
         public const int LOCATION_ID_LEVEL_1_TOLBANA = 6;
         public const int LOCATION_ID_LEVEL_1_DUNGEON = 7;
+        public const int LOCATION_ID_LEVEL_1_DEFAULT_CITY_MARKET = 8;
+        public const int LOCATION_ID_LEVEL_1_DEFAULT_CITY_INN = 9;
+        public const int LOCATION_ID_LEVEL_1_CHURCH = 10;
+        public const int LOCATION_ID_LEVEL_1_MONUMENTOFLIFE = 11;
+        public const int LOCATION_ID_LEVEL_1_TOLBANA_CENTRAL_SQUARE = 12;
+        public const int LOCATION_ID_LEVEL_1_TOLBANA_INN = 13;
+        public const int LOCATION_ID_LEVEL_1_TOLBANA_WEAPONSHOP = 14;
+        public const int LOCATION_ID_LEVEL_1_LAKE = 15;
+        public const int LOCATION_ID_LEVEL_1_HORUNKA = 16;
+        public const int LOCATION_ID_LEVEL_1_HORUNKA_INN = 17;
+        public const int LOCATION_ID_LEVEL_1_HORUNKA_SHOP = 18;
+        public const int LOCATION_ID_LEVEL_1_HORUNKA_CENTRAL_SQUARE = 19;
 
         static World()
         {
@@ -145,15 +157,110 @@ namespace Engine
         }
         private static void PopulateLocations()
         {
-            Location level1DefaultCity = new Location(LOCATION_ID_LEVEL_1_DEFAULT_CITY, "Стартовый город", "Город расположенный на 1-м этаже Айнкрада. Имеет большое количество дорог, вымощенных камнем, и средневековых улочек, освещенных уличными огнями");
-            level1DefaultCity.QuestAvailableHere = QuestByID(QUEST_ID_BOARS_GET_WILD);
+            Location level1DefaultCity = new Location(LOCATION_ID_LEVEL_1_DEFAULT_CITY, "Стартовый город", "Город расположенный на 1-м этаже Айнкрада. Имеет большое количество дорог, вымощенных камнем, и средневековых улочек, освещенных уличными огнями");           
+            Location level1DefaultCityInn = new Location(LOCATION_ID_LEVEL_1_DEFAULT_CITY_INN, "Таверна", "Внутри таверны чисто, уютно и тепло, в очаге жарко горит огонь. На стенах висят гобелены и картины с видами Айнкрада. ");
+            level1DefaultCityInn.QuestAvailableHere = QuestByID(QUEST_ID_BOARS_GET_WILD);
+            Location level1DefaulCityMarket = new Location(LOCATION_ID_LEVEL_1_DEFAULT_CITY_MARKET, "Рыночная площадь", "Самая большая торговая площадь в Айнкраде, которая славится тем, что здесь много торговцев, торгующих редкими вещами, порой даже запрещенными. Тут можно найти абсолютно все: от продуктов питания до легендарного оружия с боссов ");
+            Location level1DefaulCityIronKeep = new Location(LOCATION_ID_LEVEL_1_DEFAULT_CITY_IRON_KEEP, "Железный дворец", "Штаб квартира гильдии Армия освобождения Айнкрада");
+            Location level1MonumentOfLife = new Location(LOCATION_ID_LEVEL_1_MONUMENTOFLIFE, "Монумент жизни", "Крупная каменная тибличка. На ней высечены имена всех игроков.");
+            Location level1Church = new Location(LOCATION_ID_LEVEL_1_CHURCH, "Церковь", "Прибежище всех страждующих");
             Location level1HuntingGrounds = new Location(LOCATION_ID_LEVEL_1_HUNTING_GROUNDS, "Охотничьи угодья", "Обширная зона охоты для персонажей низкого уровня");
             level1HuntingGrounds.MonsterLivingHere = MonsterByID(MONSTER_ID_WILD_BOAR);
+            Location level1Lake = new Location(LOCATION_ID_LEVEL_1_LAKE, "Озеро", "");
+            Location level1Forest = new Location(LOCATION_ID_LEVEL_1_FOREST, "Лес", "");
+            Location level1Horunka = new Location(LOCATION_ID_LEVEL_1_HORUNKA, "Хорунка", "");
+            Location level1HorunkaCentralSquare = new Location(LOCATION_ID_LEVEL_1_HORUNKA_CENTRAL_SQUARE, "Центральная площадь", "");
+            Location level1HorunkaShop = new Location(LOCATION_ID_LEVEL_1_HORUNKA_SHOP, "Магазин", "");
+            Location level1HorunkaInn = new Location(LOCATION_ID_LEVEL_1_HORUNKA_INN, "Таверна", "");
+            Location level1DarkForest = new Location(LOCATION_ID_LEVEL_1_DARK_FOREST, "Тёмный лес", "");
+            Location level1Tolbana = new Location(LOCATION_ID_LEVEL_1_TOLBANA, "Толбана", "");
+            Location level1TolbanaCentralSquare = new Location(LOCATION_ID_LEVEL_1_TOLBANA_CENTRAL_SQUARE, "Центральная площадь", "");
+            Location level1TolbanaWeaponShop = new Location(LOCATION_ID_LEVEL_1_TOLBANA_WEAPONSHOP, "Оружейный магазин", "");
+            Location level1TolbanaInn = new Location(LOCATION_ID_LEVEL_1_TOLBANA_INN, "Таверна", "");
+            Location level1Dungeon = new Location(LOCATION_ID_LEVEL_1_DUNGEON, "Данж", "");
 
             level1DefaultCity.LocationToNorth = level1HuntingGrounds;
+            level1DefaultCity.LocationToWest = level1DefaultCityInn;
+            level1DefaultCity.LocationToEast = level1DefaulCityMarket;
+            level1DefaultCity.LocationToSouth = level1DefaulCityIronKeep;
+
+            level1DefaulCityIronKeep.LocationToNorth = level1DefaultCity;
+            level1DefaulCityIronKeep.LocationToWest = level1Church;
+            //level1DefaulCityIronKeep.LocationToEast = ;
+            level1DefaulCityIronKeep.LocationToSouth = level1MonumentOfLife;
+
+            level1MonumentOfLife.LocationToNorth = level1DefaulCityIronKeep;
+
+            level1Church.LocationToEast = level1DefaulCityIronKeep;
+
+            level1DefaulCityMarket.LocationToWest = level1DefaultCity;
+
+            level1DefaultCityInn.LocationToEast = level1DefaultCity;
+
+            level1HuntingGrounds.LocationToWest = level1Forest;
+            level1HuntingGrounds.LocationToEast = level1Lake;
+            level1HuntingGrounds.LocationToSouth = level1DefaultCity;
+
+            level1Lake.LocationToWest = level1HuntingGrounds;
+            //level1Lake.LocationToNorth = ;
+
+            level1Forest.LocationToNorth = level1Horunka;
+            level1Forest.LocationToEast = level1HuntingGrounds;
+
+            level1Horunka.LocationToNorth = level1HorunkaCentralSquare;
+            level1Horunka.LocationToSouth = level1Forest;
+
+            level1HorunkaCentralSquare.LocationToNorth = level1HorunkaInn;
+            level1HorunkaCentralSquare.LocationToWest = level1HorunkaShop;
+            level1HorunkaCentralSquare.LocationToEast = level1DarkForest;
+
+            level1HorunkaShop.LocationToEast = level1HorunkaCentralSquare;
+
+            level1HorunkaInn.LocationToSouth = level1HorunkaCentralSquare;
+
+            level1DarkForest.LocationToNorth = level1Tolbana;
+            level1DarkForest.LocationToWest = level1HorunkaCentralSquare;
+
+            level1Tolbana.LocationToNorth = level1TolbanaCentralSquare;
+            level1Tolbana.LocationToSouth = level1DarkForest;
+            //level1DarkForest.LocationToEast = ;
+
+            level1TolbanaCentralSquare.LocationToNorth = level1Dungeon;
+            level1TolbanaCentralSquare.LocationToWest = level1TolbanaInn;
+            level1TolbanaCentralSquare.LocationToEast = level1TolbanaWeaponShop;
+            level1TolbanaCentralSquare.LocationToSouth = level1Tolbana;
+
+            level1TolbanaInn.LocationToEast = level1TolbanaCentralSquare;
+
+            level1TolbanaWeaponShop.LocationToWest = level1TolbanaCentralSquare;
+
+            level1Dungeon.LocationToSouth = level1TolbanaCentralSquare;
+            
 
             Locations.Add(level1DefaultCity);
+            Locations.Add(level1DefaultCityInn);
+            Locations.Add(level1DefaulCityMarket);
+            Locations.Add(level1DefaulCityIronKeep);
+            Locations.Add(level1Church);
+            Locations.Add(level1MonumentOfLife);
+
             Locations.Add(level1HuntingGrounds);
+            Locations.Add(level1Lake);
+            Locations.Add(level1Forest);
+
+            Locations.Add(level1Horunka);
+            Locations.Add(level1HorunkaCentralSquare);
+            Locations.Add(level1HorunkaInn);
+            Locations.Add(level1HorunkaShop);
+
+            Locations.Add(level1DarkForest);
+
+            Locations.Add(level1Tolbana);
+            Locations.Add(level1TolbanaCentralSquare);
+            Locations.Add(level1TolbanaInn);
+            Locations.Add(level1TolbanaWeaponShop);
+
+            Locations.Add(level1Dungeon);
         }
 
         public static Item ItemByID(int id)

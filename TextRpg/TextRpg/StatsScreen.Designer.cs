@@ -181,6 +181,7 @@
             this.Controls.Add(this.globalLevelCount);
             this.Controls.Add(this.globalLevelLabel);
             this.Controls.Add(this.pbIcon);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StatsScreen";
             this.Text = "StatsScreen";
             ((System.ComponentModel.ISupportInitialize)(this.pbIcon)).EndInit();
