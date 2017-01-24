@@ -14,7 +14,11 @@ namespace Engine
         public static readonly List<Monster> Monsters = new List<Monster>();
         public static readonly List<Quest> Quests = new List<Quest>();
         public static readonly List<Location> Locations = new List<Location>();
-
+        #region Health Potion ID
+        public const int ITEM_ID_LITTLEHEALTHPOTION = 990;
+        public const int ITEM_ID_MEDIUMHEALTPOTION = 991;
+        #endregion
+        #region Weapon ID
         /* EQUIPMENT 0-100 */
         public const int ITEM_ID_WOODEN_SWORD = 1;
         public const int ITEM_ID_IRON_SWORD = 2;
@@ -28,6 +32,9 @@ namespace Engine
         public const int ITEM_ID_STALHRIM_SWORD = 10;
         public const int ITEM_ID_DAEDRIC_SWORD = 11;
         public const int ITEM_ID_DRAGONBONE_SWORD = 12;
+        public const int ITEM_ID_TEMPERED_SWORD = 13;
+        #endregion
+        # region Drop ID
         /* Drop 100-200 */
         public const int ITEM_ID_ABECEAN_LONG_FIN = 101; //р
         public const int ITEM_ID_CRIMSON_NIRN_ROOT = 102; //т
@@ -60,6 +67,10 @@ namespace Engine
         public const int ITEM_ID_BONEMEAL = 129;
         public const int ITEM_ID_BLEEDINGCROWN = 130;
         public const int ITEM_ID_BOAR_TUSK = 131;
+        public const int ITEM_ID_NEPENT_LIVER = 132;
+        public const int ITEM_ID_COWS_BELL = 133;
+        #endregion
+        #region Peacefull Animal ID
         /* Animals Peacefull 0-20 */
         public const int MONSTER_ID_GOAT = 1;
         public const int MONSTER_ID_COW = 2;
@@ -71,6 +82,8 @@ namespace Engine
         public const int MONSTER_ID_FOX = 8;
         public const int MONSTER_ID_MAMMOTH = 9;
         public const int MONSTER_ID_HAWK = 10;
+        #endregion
+        #region Aggresive Animal ID
         /* Animals Aggresive 20-40 */
         public const int MONSTER_ID_WHITE_BEAR = 21;
         public const int MONSTER_ID_WILD_BOAR = 22;
@@ -82,6 +95,8 @@ namespace Engine
         public const int MONSTER_ID_CAVE_BEAR = 28;
         public const int MONSTER_ID_ICE_WOLF = 29;
         public const int MONSTER_ID_SNOWY_SABRE_CAT = 30;
+        #endregion
+        #region Monsters ID
         /* Monsters 40-100 */
         public const int MONSTER_ID_VAMPIRE = 41;
         public const int MONSTER_ID_GIANT = 42;
@@ -101,10 +116,16 @@ namespace Engine
         public const int MONSTER_ID_SKELETON = 56;
         public const int MONSTER_ID_SPIDER = 57;
         public const int MONSTER_ID_GIANT_SPIDER = 58;
+        public const int MONSTER_ID_LITTLE_NEPENT = 59;
+        public const int MONSTER_ID_COW_LEADER = 60;
+        #endregion
+        #region Quest ID
         /* Quest 0-100 */
         public const int QUEST_ID_COWS_COUNTER_ATTACK = 1;
         public const int QUEST_ID_SECRET_MEDECINE_OF_THE_FORREST = 2;
         public const int QUEST_ID_BOARS_GET_WILD = 3;
+        #endregion
+        #region Location ID
         /* Location 0-100 */
         public const int LOCATION_ID_LEVEL_1_DEFAULT_CITY = 1;
         public const int LOCATION_ID_LEVEL_1_DARK_FOREST = 2;
@@ -125,7 +146,7 @@ namespace Engine
         public const int LOCATION_ID_LEVEL_1_HORUNKA_INN = 17;
         public const int LOCATION_ID_LEVEL_1_HORUNKA_SHOP = 18;
         public const int LOCATION_ID_LEVEL_1_HORUNKA_CENTRAL_SQUARE = 19;
-
+        #endregion
         static World()
         {
             PopulateItems();
@@ -138,24 +159,49 @@ namespace Engine
             Items.Add(new Weapon(ITEM_ID_WOODEN_SWORD, "Деревянный меч", "Деревянных мечей", 5));
             Items.Add(new Weapon(ITEM_ID_IRON_SWORD, "Железный меч", "Железных мечей", 8));
             Items.Add(new Weapon(ITEM_ID_STEEL_SWORD, "Стальной меч", "Стальных мечей", 12));
+            Items.Add(new Weapon(ITEM_ID_TEMPERED_SWORD, "Закалённый меч", "Закалённых мечей", 15));
             Items.Add(new Weapon(ITEM_ID_ORCISH_SWORD, "Орочий меч", "Орочьих мечей", 16));
-            Items.Add(new Weapon(ITEM_ID_DWARVEN_SWORD, "Двемерский меч", "Двемерских мечей", 19));
+            Items.Add(new Weapon(ITEM_ID_DWARVEN_SWORD, "Двемерский меч", "Двемерских мечей", 19));           
 
             Items.Add(new Item(ITEM_ID_BOAR_TUSK, "Бивень кабана", "Бивней кабана"));
+            Items.Add(new Item(ITEM_ID_NEPENT_LIVER, "Семяпочка малого Непента", "Семяпочки малого Непента"));
+            Items.Add(new Item(ITEM_ID_COWS_BELL, "Коровий колокольчик", "Коровьих колокольчика"));
+
+            Items.Add(new HealingPotion(ITEM_ID_LITTLEHEALTHPOTION, "Маленькое лечебное зелье", "Маленьких лечебных зелья", 30));
+            Items.Add(new HealingPotion(ITEM_ID_MEDIUMHEALTPOTION, "Среднее лечебное зелье", "Средних лечебных зелий", 100));
         }
         private static void PopulateMonsters()
         {
-            Monster wildBoar = new Monster(MONSTER_ID_WILD_BOAR, "Дикий кабан", 2, 27, 30, 10, 10);
+            Monster wildBoar = new Monster(MONSTER_ID_WILD_BOAR, "Дикий кабан", 2, 27, 10, 10, 10, Properties.Resources.level1WildBoar);
             wildBoar.LootTable.Add(new LootItem(ItemByID(ITEM_ID_BOAR_TUSK), 95, false));
-
+            wildBoar.LootTable.Add(new LootItem(ItemByID(ITEM_ID_LITTLEHEALTHPOTION), 10, false));
             Monsters.Add(wildBoar);
+            Monster wildWolf = new Monster(MONSTER_ID_WOLF, "Волк", 3, 30, 20, 15, 15, Properties.Resources.level1wolf);
+            Monsters.Add(wildWolf);
+            Monster littleNepent = new Monster(MONSTER_ID_LITTLE_NEPENT, "Малый Непент", 5, 40, 30, 25, 25, Properties.Resources.level1Nepent);
+            littleNepent.LootTable.Add(new LootItem(ItemByID(ITEM_ID_NEPENT_LIVER), 1, false));
+            littleNepent.LootTable.Add(new LootItem(ItemByID(ITEM_ID_LITTLEHEALTHPOTION), 10, false));
+            Monsters.Add(littleNepent);
+            Monster cowLeader = new Monster(MONSTER_ID_COW_LEADER, "Лидер коров", 7, 40, 40, 35, 35, Properties.Resources.level1cowLeader);
+            cowLeader.LootTable.Add(new LootItem(ItemByID(ITEM_ID_COWS_BELL), 50, false));
+            cowLeader.LootTable.Add(new LootItem(ItemByID(ITEM_ID_LITTLEHEALTHPOTION), 20, false));
+            cowLeader.LootTable.Add(new LootItem(ItemByID(ITEM_ID_MEDIUMHEALTPOTION), 10, false));
+            Monsters.Add(cowLeader);
         }
         private static void PopulateQuests()
         {
             Quest boarsGetWild = new Quest(QUEST_ID_BOARS_GET_WILD, "Кабаны сошли с ума", "Кабаны посходили с ума и нападают на странников на дороге, принеси мне 10 бивней и я тебе заплачу.", 140, 150);
             boarsGetWild.QuestCompletionItems.Add(new QuestCompletionItem(ItemByID(ITEM_ID_BOAR_TUSK), 10));
-            boarsGetWild.RewardItem = ItemByID(ITEM_ID_STEEL_SWORD);
+            boarsGetWild.RewardItem = ItemByID(ITEM_ID_IRON_SWORD);
             Quests.Add(boarsGetWild);
+            Quest secretMedecineOfTheForrest = new Quest(QUEST_ID_SECRET_MEDECINE_OF_THE_FORREST, "Секретная лесная медицина", "В лесу неподалёку обитают Непенты. Это такое ходячее хищное растение полутораметрового роста, ты их нисчем не перепутаешь. Иногда среди них можно встретить экземпляр с распущенным цветком вот именно он мне и нужен", 550, 800);
+            secretMedecineOfTheForrest.QuestCompletionItems.Add(new QuestCompletionItem(ItemByID(ITEM_ID_NEPENT_LIVER), 1));
+            secretMedecineOfTheForrest.RewardItem = ItemByID(ITEM_ID_TEMPERED_SWORD);
+            Quests.Add(secretMedecineOfTheForrest);
+            Quest cowsCounterAttack = new Quest(QUEST_ID_COWS_COUNTER_ATTACK, "Коровые наносят ответный удар", "На нашей ферме у озера произошли странные события, сперва коровы всем скопом куда-то исчезли а после вернулись назад но уже другими. У них появлись своя иерархия, лидеры. Они нападают на фермеров стоит им только приблизиться, эту проблему нужно решать.", 400, 500);
+            cowsCounterAttack.QuestCompletionItems.Add(new QuestCompletionItem(ItemByID(ITEM_ID_COWS_BELL), 10));
+            cowsCounterAttack.RewardItem = ItemByID(ITEM_ID_STEEL_SWORD);
+            Quests.Add(cowsCounterAttack);
         }
         private static void PopulateLocations()
         {
@@ -169,18 +215,23 @@ namespace Engine
             Location level1HuntingGrounds = new Location(LOCATION_ID_LEVEL_1_HUNTING_GROUNDS, "Охотничьи угодья", "Обширная зона охоты для персонажей низкого уровня", Properties.Resources.level1HuntingGrounds);
             level1HuntingGrounds.MonsterLivingHere = MonsterByID(MONSTER_ID_WILD_BOAR);
             Location level1Lake = new Location(LOCATION_ID_LEVEL_1_LAKE, "Озеро", "", Properties.Resources.level1Lake);
+            level1Lake.MonsterLivingHere = MonsterByID(MONSTER_ID_COW_LEADER);
             Location level1Forest = new Location(LOCATION_ID_LEVEL_1_FOREST, "Лес", "", Properties.Resources.level1Forest);
+            level1Forest.MonsterLivingHere = MonsterByID(MONSTER_ID_WOLF);
             Location level1Horunka = new Location(LOCATION_ID_LEVEL_1_HORUNKA, "Хорунка", "", Properties.Resources.level1Horunka);
             Location level1HorunkaCentralSquare = new Location(LOCATION_ID_LEVEL_1_HORUNKA_CENTRAL_SQUARE, "Центральная площадь", "", Properties.Resources.level1HorunkaCentral);
             Location level1HorunkaShop = new Location(LOCATION_ID_LEVEL_1_HORUNKA_SHOP, "Магазин", "", Properties.Resources.Level1HorunkaShop);
             Location level1HorunkaInn = new Location(LOCATION_ID_LEVEL_1_HORUNKA_INN, "Таверна", "", Properties.Resources.level1HorunkaInn);
+            level1HorunkaInn.QuestAvailableHere = QuestByID(QUEST_ID_SECRET_MEDECINE_OF_THE_FORREST);
             Location level1DarkForest = new Location(LOCATION_ID_LEVEL_1_DARK_FOREST, "Тёмный лес", "", Properties.Resources.level1Forest2);
+            level1DarkForest.MonsterLivingHere = MonsterByID(MONSTER_ID_LITTLE_NEPENT);
             Location level1Tolbana = new Location(LOCATION_ID_LEVEL_1_TOLBANA, "Толбана", "",Properties.Resources.level1TolbanaCentralSquare);
             Location level1TolbanaCentralSquare = new Location(LOCATION_ID_LEVEL_1_TOLBANA_CENTRAL_SQUARE, "Центральная площадь Толбаны", "", Properties.Resources.level1TolbanaCentral);
             Location level1TolbanaWeaponShop = new Location(LOCATION_ID_LEVEL_1_TOLBANA_WEAPONSHOP, "Оружейный магазин", "", Properties.Resources.level1TolbanaWeaponShop);
             Location level1TolbanaInn = new Location(LOCATION_ID_LEVEL_1_TOLBANA_INN, "Таверна", "", Properties.Resources.level1TolbanaInn);
+            level1TolbanaInn.QuestAvailableHere = QuestByID(QUEST_ID_COWS_COUNTER_ATTACK);
             Location level1Dungeon = new Location(LOCATION_ID_LEVEL_1_DUNGEON, "Данж", "", Properties.Resources.level1TolbanaDungeonEnter);
-
+            #region ROOTLINE
             level1DefaultCity.LocationToNorth = level1HuntingGrounds;
             level1DefaultCity.LocationToWest = level1DefaultCityInn;
             level1DefaultCity.LocationToEast = level1DefaulCityMarket;
@@ -238,7 +289,7 @@ namespace Engine
             level1TolbanaWeaponShop.LocationToWest = level1TolbanaCentralSquare;
 
             level1Dungeon.LocationToSouth = level1TolbanaCentralSquare;
-            
+            #endregion
 
             Locations.Add(level1DefaultCity);
             Locations.Add(level1DefaultCityInn);
@@ -265,7 +316,7 @@ namespace Engine
 
             Locations.Add(level1Dungeon);
         }
-
+        #region ID engine
         public static Item ItemByID(int id)
         {
             foreach (Item item in Items)
@@ -310,6 +361,6 @@ namespace Engine
             }
             return null;
         }
-
+        #endregion
     }
 }

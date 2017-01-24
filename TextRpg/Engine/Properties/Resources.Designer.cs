@@ -73,6 +73,16 @@ namespace Engine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap level1cowLeader {
+            get {
+                object obj = ResourceManager.GetObject("level1cowLeader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap level1DefaultCity {
             get {
                 object obj = ResourceManager.GetObject("level1DefaultCity", resourceCulture);
@@ -203,6 +213,16 @@ namespace Engine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap level1Nepent {
+            get {
+                object obj = ResourceManager.GetObject("level1Nepent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap level1TolbanaCentral {
             get {
                 object obj = ResourceManager.GetObject("level1TolbanaCentral", resourceCulture);
@@ -246,6 +266,26 @@ namespace Engine.Properties {
         internal static System.Drawing.Bitmap level1TolbanaWeaponShop {
             get {
                 object obj = ResourceManager.GetObject("level1TolbanaWeaponShop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap level1WildBoar {
+            get {
+                object obj = ResourceManager.GetObject("level1WildBoar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap level1wolf {
+            get {
+                object obj = ResourceManager.GetObject("level1wolf", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

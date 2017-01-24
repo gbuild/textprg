@@ -118,8 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="level1HorunkaCentral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\level1HorunkaCentral.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="level1TolbanaDungeonEnter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level1TolbanaDungeonEnter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="level1TolbanaInn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level1TolbanaInn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="level1Forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\level1Forest.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,44 +130,53 @@
   <data name="level1DefaultCityInn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\level1DefaultCityInn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="level1TolbanaInn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\level1TolbanaInn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="level1DefaultCityMarket" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\level1DefaultCityMarket.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="level1IronKeep" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\level1IronKeep.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="level1DefaultCity" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\level1DefaultCity.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="level1MonumentOfLife" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\level1MonumentOfLife.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="level1TolbanaCentral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\level1TolbanaCentral.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="level1Lake" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\level1Lake.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="level1HorunkaInn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\level1HorunkaInn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="level1Forest2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\level1Forest2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Level1HorunkaShop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Level1HorunkaShop.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="level1WildBoar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level1WildBoar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="level1IronKeep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level1IronKeep.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="level1MonumentOfLife" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level1MonumentOfLife.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="level1Nepent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level1Nepent.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="level1TolbanaCentral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level1TolbanaCentral.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="level1HuntingGrounds" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\level1HuntingGrounds.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="level1DefaultCityMarket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level1DefaultCityMarket.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="level1HorunkaInn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level1HorunkaInn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Level1HorunkaShop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Level1HorunkaShop.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="level1Lake" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level1Lake.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="level1TolbanaWeaponShop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\level1TolbanaWeaponShop.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="level1wolf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level1wolf.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="level1Horunka" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\level1Horunka.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="level1HorunkaCentral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level1HorunkaCentral.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="level1TolbanaCentralSquare" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\level1TolbanaCentralSquare.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,7 +184,7 @@
   <data name="level1Church" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\level1Church.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="level1TolbanaDungeonEnter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\level1TolbanaDungeonEnter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="level1cowLeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level1cowLeader.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

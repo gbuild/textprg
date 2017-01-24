@@ -165,7 +165,7 @@ namespace TextRpg
                         if (playerHasAllItemsToCopleteQuest)
                         {
                             rtbMessages.Text += Environment.NewLine;
-                            rtbMessages.Text += $"Вы выполнили {newLocation.QuestAvailableHere.Name} квест. " + Environment.NewLine;
+                            rtbMessages.Text += $"Вы успешно выполнили задание {newLocation.QuestAvailableHere.Name}. " + Environment.NewLine;
                             _player.RemoveQuestCompletionItems(newLocation.QuestAvailableHere);
                             rtbMessages.Text += "Вы получили: " + Environment.NewLine;
                             rtbMessages.Text += newLocation.QuestAvailableHere.RewardExperience.ToString() + " очков опыта " + Environment.NewLine;
@@ -181,7 +181,7 @@ namespace TextRpg
 
                 else
                 {
-                    rtbMessages.Text += $"Вы взяли новый квест {newLocation.QuestAvailableHere.Name}."+Environment.NewLine;
+                    rtbMessages.Text += $"Вы получили новое задание {newLocation.QuestAvailableHere.Name}."+Environment.NewLine;
                     rtbMessages.Text += newLocation.QuestAvailableHere.Description + Environment.NewLine;
                     rtbMessages.Text += "Для выполнения принесите мне: ";
                     foreach (QuestCompletionItem qci in newLocation.QuestAvailableHere.QuestCompletionItems)
@@ -203,7 +203,7 @@ namespace TextRpg
             {
                 rtbMessages.Text += $"Вы видите {newLocation.MonsterLivingHere.Name}" + Environment.NewLine;
                 Monster standartMonster = World.MonsterByID(newLocation.MonsterLivingHere.ID);
-                _currentMonster = new Monster(standartMonster.ID, standartMonster.Name, standartMonster.Damage, standartMonster.RewardExperinece, standartMonster.RewardGold, standartMonster.CurrentHealth, standartMonster.MaximumHealth);
+                _currentMonster = new Monster(standartMonster.ID, standartMonster.Name, standartMonster.Damage, standartMonster.RewardExperinece, standartMonster.RewardGold, standartMonster.CurrentHealth, standartMonster.MaximumHealth,standartMonster.MonsterDisplayImage);
                 foreach (LootItem lootItem in standartMonster.LootTable)
                 {
                     _currentMonster.LootTable.Add(lootItem);
@@ -237,6 +237,7 @@ namespace TextRpg
 
         private void btnUseWeapon_Click(object sender, EventArgs e)
         {
+            pbCurrent.Image= _currentMonster.MonsterDisplayImage;
             Weapon currentWeapon = (Weapon)cboWeapons.SelectedItem;
             int damageToMonster = currentWeapon.Damage;
             _currentMonster.CurrentHealth -= damageToMonster;
@@ -291,9 +292,11 @@ namespace TextRpg
                 rtbMessages.Text += $"Ваш противник {_currentMonster.Name} нанёс вам {damageToPlayer.ToString()} едениц урона." + Environment.NewLine;
                 _player.CurrentHealth -= damageToPlayer;
                 if(_player.CurrentHealth <= 0)
-                {
+                {                   
                     rtbMessages.Text += $"Вас убил {_currentMonster.Name}" + Environment.NewLine;
                     MoveTo(World.LocationByID(World.LOCATION_ID_LEVEL_1_MONUMENTOFLIFE));
+                    _player.CurrentHealth = _player.MaximumHealth;
+
                 }
             }
         }
