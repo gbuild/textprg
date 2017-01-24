@@ -174,18 +174,18 @@ namespace Engine
         {
             Monster wildBoar = new Monster(MONSTER_ID_WILD_BOAR, "Дикий кабан", 2, 27, 10, 10, 10, Properties.Resources.level1WildBoar);
             wildBoar.LootTable.Add(new LootItem(ItemByID(ITEM_ID_BOAR_TUSK), 95, false));
-            wildBoar.LootTable.Add(new LootItem(ItemByID(ITEM_ID_LITTLEHEALTHPOTION), 10, false));
+            wildBoar.LootTable.Add(new LootItem(ItemByID(ITEM_ID_LITTLEHEALTHPOTION), 20, false));
             Monsters.Add(wildBoar);
             Monster wildWolf = new Monster(MONSTER_ID_WOLF, "Волк", 3, 30, 20, 15, 15, Properties.Resources.level1wolf);
             Monsters.Add(wildWolf);
             Monster littleNepent = new Monster(MONSTER_ID_LITTLE_NEPENT, "Малый Непент", 5, 40, 30, 25, 25, Properties.Resources.level1Nepent);
             littleNepent.LootTable.Add(new LootItem(ItemByID(ITEM_ID_NEPENT_LIVER), 1, false));
-            littleNepent.LootTable.Add(new LootItem(ItemByID(ITEM_ID_LITTLEHEALTHPOTION), 10, false));
+            littleNepent.LootTable.Add(new LootItem(ItemByID(ITEM_ID_LITTLEHEALTHPOTION), 30, false));
             Monsters.Add(littleNepent);
             Monster cowLeader = new Monster(MONSTER_ID_COW_LEADER, "Лидер коров", 7, 40, 40, 35, 35, Properties.Resources.level1cowLeader);
             cowLeader.LootTable.Add(new LootItem(ItemByID(ITEM_ID_COWS_BELL), 50, false));
-            cowLeader.LootTable.Add(new LootItem(ItemByID(ITEM_ID_LITTLEHEALTHPOTION), 20, false));
-            cowLeader.LootTable.Add(new LootItem(ItemByID(ITEM_ID_MEDIUMHEALTPOTION), 10, false));
+            cowLeader.LootTable.Add(new LootItem(ItemByID(ITEM_ID_LITTLEHEALTHPOTION), 30, false));
+            cowLeader.LootTable.Add(new LootItem(ItemByID(ITEM_ID_MEDIUMHEALTPOTION), 15, false));
             Monsters.Add(cowLeader);
         }
         private static void PopulateQuests()
