@@ -28,7 +28,6 @@ namespace TextRpg
         {
             globalLevelCount.Text = player.Level.ToString();
             globalExpCount.Visible = false;
-            //globalExpCount.Text = player.Experience.ToString();
             globalHealthCount.Text = $"{player.CurrentHealth.ToString()}\\{player.MaximumHealth}";
             globalGoldCount.Text = player.Gold.ToString();            
         }

@@ -58,54 +58,60 @@
             // globalLevelLabel
             // 
             this.globalLevelLabel.AutoSize = true;
+            this.globalLevelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.globalLevelLabel.Location = new System.Drawing.Point(233, 12);
             this.globalLevelLabel.Name = "globalLevelLabel";
-            this.globalLevelLabel.Size = new System.Drawing.Size(57, 13);
+            this.globalLevelLabel.Size = new System.Drawing.Size(70, 16);
             this.globalLevelLabel.TabIndex = 1;
             this.globalLevelLabel.Text = "Уровень: ";
             // 
             // globalLevelCount
             // 
             this.globalLevelCount.AutoSize = true;
-            this.globalLevelCount.Location = new System.Drawing.Point(304, 12);
+            this.globalLevelCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.globalLevelCount.Location = new System.Drawing.Point(362, 12);
             this.globalLevelCount.Name = "globalLevelCount";
-            this.globalLevelCount.Size = new System.Drawing.Size(13, 13);
+            this.globalLevelCount.Size = new System.Drawing.Size(15, 16);
             this.globalLevelCount.TabIndex = 5;
             this.globalLevelCount.Text = "1";
             // 
             // globalHealthLabel
             // 
             this.globalHealthLabel.AutoSize = true;
-            this.globalHealthLabel.Location = new System.Drawing.Point(233, 66);
+            this.globalHealthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.globalHealthLabel.Location = new System.Drawing.Point(233, 61);
             this.globalHealthLabel.Name = "globalHealthLabel";
-            this.globalHealthLabel.Size = new System.Drawing.Size(62, 13);
+            this.globalHealthLabel.Size = new System.Drawing.Size(78, 16);
             this.globalHealthLabel.TabIndex = 8;
             this.globalHealthLabel.Text = "Здоровье: ";
             // 
             // globalHealthCount
             // 
             this.globalHealthCount.AutoSize = true;
-            this.globalHealthCount.Location = new System.Drawing.Point(304, 66);
+            this.globalHealthCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.globalHealthCount.Location = new System.Drawing.Point(362, 61);
             this.globalHealthCount.Name = "globalHealthCount";
-            this.globalHealthCount.Size = new System.Drawing.Size(25, 13);
+            this.globalHealthCount.Size = new System.Drawing.Size(29, 16);
             this.globalHealthCount.TabIndex = 9;
             this.globalHealthCount.Text = "100";
             // 
             // globalGoldLabel
             // 
             this.globalGoldLabel.AutoSize = true;
-            this.globalGoldLabel.Location = new System.Drawing.Point(241, 134);
+            this.globalGoldLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.globalGoldLabel.Location = new System.Drawing.Point(241, 116);
             this.globalGoldLabel.Name = "globalGoldLabel";
-            this.globalGoldLabel.Size = new System.Drawing.Size(49, 13);
+            this.globalGoldLabel.Size = new System.Drawing.Size(62, 16);
             this.globalGoldLabel.TabIndex = 10;
             this.globalGoldLabel.Text = "Золото: ";
             // 
             // globalGoldCount
             // 
             this.globalGoldCount.AutoSize = true;
-            this.globalGoldCount.Location = new System.Drawing.Point(304, 134);
+            this.globalGoldCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.globalGoldCount.Location = new System.Drawing.Point(362, 116);
             this.globalGoldCount.Name = "globalGoldCount";
-            this.globalGoldCount.Size = new System.Drawing.Size(13, 13);
+            this.globalGoldCount.Size = new System.Drawing.Size(15, 16);
             this.globalGoldCount.TabIndex = 11;
             this.globalGoldCount.Text = "0";
             // 
@@ -148,9 +154,10 @@
             // globalExpCount
             // 
             this.globalExpCount.AutoSize = true;
-            this.globalExpCount.Location = new System.Drawing.Point(338, 12);
+            this.globalExpCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.globalExpCount.Location = new System.Drawing.Point(585, 106);
             this.globalExpCount.Name = "globalExpCount";
-            this.globalExpCount.Size = new System.Drawing.Size(13, 13);
+            this.globalExpCount.Size = new System.Drawing.Size(15, 16);
             this.globalExpCount.TabIndex = 15;
             this.globalExpCount.Text = "0";
             // 

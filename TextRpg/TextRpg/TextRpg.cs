@@ -21,7 +21,7 @@ namespace TextRpg
         public TextRpg()
         {     
             InitializeComponent();
-            _player = new Player(0,0,100,100);
+            _player = new Player(0,0,10,100,100);
             _player.Inventory.Add(new InventoryItem(World.ItemByID(World.ITEM_ID_WOODEN_SWORD), 1));
             MoveTo(World.LocationByID(World.LOCATION_ID_LEVEL_1_DEFAULT_CITY));
             images = new List<Bitmap>();
@@ -171,7 +171,7 @@ namespace TextRpg
                             rtbMessages.Text += newLocation.QuestAvailableHere.RewardExperience.ToString() + " очков опыта " + Environment.NewLine;
                             rtbMessages.Text += newLocation.QuestAvailableHere.RewardGold.ToString() + " золота " + Environment.NewLine;
                             rtbMessages.Text += newLocation.QuestAvailableHere.RewardItem.Name + Environment.NewLine;
-                            _player.Experience += newLocation.QuestAvailableHere.RewardExperience;
+                            _player.AddExperiencePoints(newLocation.QuestAvailableHere.RewardExperience);
                             _player.Gold += newLocation.QuestAvailableHere.RewardGold;
                             _player.AddItemToInventory(newLocation.QuestAvailableHere.RewardItem);
                             _player.MarkQuestCompleted(newLocation.QuestAvailableHere);
@@ -220,10 +220,8 @@ namespace TextRpg
                 _currentMonster = null;
                 cboWeapons.Visible = false;
                 cboSkills.Visible = false;
-                cboPotions.Visible = false;
                 btnUseWeapon.Visible = false;
                 btnUseSkill.Visible = false;
-                btnUsePotion.Visible = false;
             }
             UpdateWeaponList();
             UpdatePotionList();
@@ -239,14 +237,21 @@ namespace TextRpg
         {
             pbCurrent.Image= _currentMonster.MonsterDisplayImage;
             Weapon currentWeapon = (Weapon)cboWeapons.SelectedItem;
-            int damageToMonster = currentWeapon.Damage;
-            _currentMonster.CurrentHealth -= damageToMonster;
+            int damageToMonster = currentWeapon.Damage + _player.Strength;
+            if (damageToMonster > 0)
+            {
+                _currentMonster.CurrentHealth -= damageToMonster;
+            }
+            else
+            {
+                rtbMessages.Text += "Вы безоружные, возьмите в руки оружие." + Environment.NewLine;
+            }
             rtbMessages.Text += $"Вы нанесли цели {_currentMonster.Name} {damageToMonster.ToString()} едениц урона. " +Environment.NewLine;
             if(_currentMonster.CurrentHealth <= 0)
             {
                 rtbMessages.Text += Environment.NewLine;
                 rtbMessages.Text += $"Вы одержали победу над {_currentMonster.Name}" + Environment.NewLine;
-                _player.Experience += _currentMonster.RewardExperinece;
+                _player.AddExperiencePoints(_currentMonster.RewardExperinece);
                 rtbMessages.Text += $"За победу вы получили {_currentMonster.RewardExperinece.ToString()} едениц опыта." + Environment.NewLine;
                 _player.Gold += _currentMonster.RewardGold;
                 rtbMessages.Text += $"У противника вы нашли {_currentMonster.RewardGold.ToString()} золотых монет"+Environment.NewLine;
@@ -284,6 +289,9 @@ namespace TextRpg
                 UpdateWeaponList();
                 rtbMessages.Text += Environment.NewLine;
                 btnUseWeapon.Visible = false;
+                cboWeapons.Visible = false;
+                btnUseSkill.Visible = false;
+                cboSkills.Visible = false;
                 //MoveTo(_player.CurrentLocation);            
             }
             else
@@ -319,18 +327,19 @@ namespace TextRpg
                 if (ii.Details.ID == potion.ID)
                 {
                     ii.Quantity--;
+                    UpdatePotionList();
                     break;
                 }
             }
-            rtbMessages.Text += $"Вы использовали {potion.Name}." + Environment.NewLine;
-            int damageToPlayer = _currentMonster.Damage;
+           rtbMessages.Text += $"Вы использовали {potion.Name}. Восстановленно {potion.AmountToHeal} едениц здоровья." + Environment.NewLine;
+            /*int damageToPlayer = _currentMonster.Damage;
             rtbMessages.Text += $"{_currentMonster.Name} нанёс вам {damageToPlayer.ToString()} едениц урона."+Environment.NewLine;
             _player.CurrentHealth -= damageToPlayer;
             if (_player.CurrentHealth <= 0)
             {
                 rtbMessages.Text += $"Вас убил {_currentMonster.Name}" + Environment.NewLine;
                 MoveTo(World.LocationByID(World.LOCATION_ID_LEVEL_1_MONUMENTOFLIFE));
-            }
+            }*/
         }
 
         private void btnRun_Click(object sender, EventArgs e)

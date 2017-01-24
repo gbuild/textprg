@@ -10,18 +10,25 @@ namespace Engine
     {
         public int Gold { get; set; }
         public int Experience{ get; set;}
-        public int Level { get { return ((Experience / 500) + 1); } }
+        public int Level { get { return ((Experience / 1000) + 1); } }
+        public int Strength { get; set; }
         public Location CurrentLocation { get; set; }
         public Weapon CurrentWeapon { get; set; }
         public List<InventoryItem> Inventory { get; set; }
         public List<PlayerQuest> Quests { get; set; }
 
-        public Player (int gold, int experience, int currentHealth, int maximumHealth) :base(currentHealth,maximumHealth)
+        public Player (int gold, int experience, int strength, int currentHealth, int maximumHealth) :base(currentHealth,maximumHealth)
         {
+            Strength = strength;
             Gold = gold;
             Experience = experience;
             Inventory = new List<InventoryItem>();
             Quests = new List<PlayerQuest>();
+        }
+        public void AddExperiencePoints(int experience)
+        {
+            Experience += experience;
+            MaximumHealth = (Level * 100);
         }
         public bool HasThisQuest(Quest quest)
         {
