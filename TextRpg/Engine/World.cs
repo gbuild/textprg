@@ -170,16 +170,16 @@ namespace Engine
             level1HuntingGrounds.MonsterLivingHere = MonsterByID(MONSTER_ID_WILD_BOAR);
             Location level1Lake = new Location(LOCATION_ID_LEVEL_1_LAKE, "Озеро", "", Properties.Resources.level1Lake);
             Location level1Forest = new Location(LOCATION_ID_LEVEL_1_FOREST, "Лес", "", Properties.Resources.level1Forest);
-            Location level1Horunka = new Location(LOCATION_ID_LEVEL_1_HORUNKA, "Хорунка", "");
-            Location level1HorunkaCentralSquare = new Location(LOCATION_ID_LEVEL_1_HORUNKA_CENTRAL_SQUARE, "Центральная площадь", "");
-            Location level1HorunkaShop = new Location(LOCATION_ID_LEVEL_1_HORUNKA_SHOP, "Магазин", "");
-            Location level1HorunkaInn = new Location(LOCATION_ID_LEVEL_1_HORUNKA_INN, "Таверна", "");
+            Location level1Horunka = new Location(LOCATION_ID_LEVEL_1_HORUNKA, "Хорунка", "", Properties.Resources.level1Horunka);
+            Location level1HorunkaCentralSquare = new Location(LOCATION_ID_LEVEL_1_HORUNKA_CENTRAL_SQUARE, "Центральная площадь", "", Properties.Resources.level1HorunkaCentral);
+            Location level1HorunkaShop = new Location(LOCATION_ID_LEVEL_1_HORUNKA_SHOP, "Магазин", "", Properties.Resources.Level1HorunkaShop);
+            Location level1HorunkaInn = new Location(LOCATION_ID_LEVEL_1_HORUNKA_INN, "Таверна", "", Properties.Resources.level1HorunkaInn);
             Location level1DarkForest = new Location(LOCATION_ID_LEVEL_1_DARK_FOREST, "Тёмный лес", "", Properties.Resources.level1Forest2);
-            Location level1Tolbana = new Location(LOCATION_ID_LEVEL_1_TOLBANA, "Толбана", "");
-            Location level1TolbanaCentralSquare = new Location(LOCATION_ID_LEVEL_1_TOLBANA_CENTRAL_SQUARE, "Центральная площадь Толбаны", "", Properties.Resources.level1TolbanaCentralSquare);
-            Location level1TolbanaWeaponShop = new Location(LOCATION_ID_LEVEL_1_TOLBANA_WEAPONSHOP, "Оружейный магазин", "");
-            Location level1TolbanaInn = new Location(LOCATION_ID_LEVEL_1_TOLBANA_INN, "Таверна", "");
-            Location level1Dungeon = new Location(LOCATION_ID_LEVEL_1_DUNGEON, "Данж", "");
+            Location level1Tolbana = new Location(LOCATION_ID_LEVEL_1_TOLBANA, "Толбана", "",Properties.Resources.level1TolbanaCentralSquare);
+            Location level1TolbanaCentralSquare = new Location(LOCATION_ID_LEVEL_1_TOLBANA_CENTRAL_SQUARE, "Центральная площадь Толбаны", "", Properties.Resources.level1TolbanaCentral);
+            Location level1TolbanaWeaponShop = new Location(LOCATION_ID_LEVEL_1_TOLBANA_WEAPONSHOP, "Оружейный магазин", "", Properties.Resources.level1TolbanaWeaponShop);
+            Location level1TolbanaInn = new Location(LOCATION_ID_LEVEL_1_TOLBANA_INN, "Таверна", "", Properties.Resources.level1TolbanaInn);
+            Location level1Dungeon = new Location(LOCATION_ID_LEVEL_1_DUNGEON, "Данж", "", Properties.Resources.level1TolbanaDungeonEnter);
 
             level1DefaultCity.LocationToNorth = level1HuntingGrounds;
             level1DefaultCity.LocationToWest = level1DefaultCityInn;
@@ -215,6 +215,7 @@ namespace Engine
             level1HorunkaCentralSquare.LocationToNorth = level1HorunkaInn;
             level1HorunkaCentralSquare.LocationToWest = level1HorunkaShop;
             level1HorunkaCentralSquare.LocationToEast = level1DarkForest;
+            level1HorunkaCentralSquare.LocationToSouth = level1Horunka;
 
             level1HorunkaShop.LocationToEast = level1HorunkaCentralSquare;
 

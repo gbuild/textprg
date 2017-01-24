@@ -115,6 +115,30 @@
   <ItemGroup>
     <None Include="Resources\level1TolbanaCentralSquare.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1TolbanaCentral.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1TolbanaInn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1TolbanaWeaponShop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1Horunka.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1HorunkaCentral.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1HorunkaInn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Level1HorunkaShop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level1TolbanaDungeonEnter.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

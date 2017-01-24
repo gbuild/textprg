@@ -123,6 +123,46 @@ namespace Engine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap level1Horunka {
+            get {
+                object obj = ResourceManager.GetObject("level1Horunka", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap level1HorunkaCentral {
+            get {
+                object obj = ResourceManager.GetObject("level1HorunkaCentral", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap level1HorunkaInn {
+            get {
+                object obj = ResourceManager.GetObject("level1HorunkaInn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Level1HorunkaShop {
+            get {
+                object obj = ResourceManager.GetObject("Level1HorunkaShop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap level1HuntingGrounds {
             get {
                 object obj = ResourceManager.GetObject("level1HuntingGrounds", resourceCulture);
@@ -163,9 +203,49 @@ namespace Engine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap level1TolbanaCentral {
+            get {
+                object obj = ResourceManager.GetObject("level1TolbanaCentral", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap level1TolbanaCentralSquare {
             get {
                 object obj = ResourceManager.GetObject("level1TolbanaCentralSquare", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap level1TolbanaDungeonEnter {
+            get {
+                object obj = ResourceManager.GetObject("level1TolbanaDungeonEnter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap level1TolbanaInn {
+            get {
+                object obj = ResourceManager.GetObject("level1TolbanaInn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap level1TolbanaWeaponShop {
+            get {
+                object obj = ResourceManager.GetObject("level1TolbanaWeaponShop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

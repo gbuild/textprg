@@ -99,21 +99,57 @@ namespace TextRpg
             }
             else
             {
+                cboWeapons.SelectedIndexChanged -= cboWeapons_SelectedIndexChanged;
                 cboWeapons.DataSource = weapons;
+                cboWeapons.SelectedIndexChanged += cboWeapons_SelectedIndexChanged;
                 cboWeapons.DisplayMember = "Name";
                 cboWeapons.ValueMember = "ID";
-                cboWeapons.SelectedIndex = 0;
+                if (_player.CurrentWeapon != null)
+                {
+                    cboWeapons.SelectedItem = _player.CurrentWeapon;
+                }
+                else
+                {
+                    cboWeapons.SelectedIndex = 0;
+                }
             }
+        }
+        private void cboWeapons_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _player.CurrentWeapon = (Weapon)cboWeapons.SelectedItem;
         }
         private void MoveTo(Location newLocation)
         {
-            _player.CurrentLocation = newLocation;
+            _player.CurrentLocation = newLocation;           
             pbCurrent.Image = newLocation.LocationDisplayImage;
-            btnNorth.Visible = (newLocation.LocationToNorth !=null);
-            btnSouth.Visible = (newLocation.LocationToSouth !=null);
-            btnWest.Visible = (newLocation.LocationToWest!= null);
-            btnEast.Visible = (newLocation.LocationToEast != null);
-
+            /* Для рефактора от */
+            if (newLocation.LocationToNorth != null)
+            {
+                btnNorth.Text = newLocation.LocationToNorth.Name;
+                btnNorth.Visible = true;
+            }
+            else { btnNorth.Visible = false; 
+            }
+            if (newLocation.LocationToSouth != null)
+            {
+                btnSouth.Text = newLocation.LocationToSouth.Name;
+                btnSouth.Visible = true;
+            }
+            else { btnSouth.Visible = false;}
+            if(newLocation.LocationToWest != null)
+            {
+                btnWest.Text = newLocation.LocationToWest.Name;
+                btnWest.Visible = true;
+            }
+            else
+            { btnWest.Visible = false;}
+            if (newLocation.LocationToEast != null)
+            {
+                btnEast.Text = newLocation.LocationToEast.Name;
+                btnEast.Visible = true;
+            }
+            else {btnEast.Visible = false;}
+            /* До */
             rtbMessages.Text = newLocation.Name + Environment.NewLine;
             rtbMessages.Text += newLocation.Description + Environment.NewLine;
             if(newLocation.QuestAvailableHere!=null)

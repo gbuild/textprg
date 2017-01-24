@@ -12,6 +12,7 @@ namespace Engine
         public int Experience{ get; set;}
         public int Level { get { return ((Experience / 500) + 1); } }
         public Location CurrentLocation { get; set; }
+        public Weapon CurrentWeapon { get; set; }
         public List<InventoryItem> Inventory { get; set; }
         public List<PlayerQuest> Quests { get; set; }
 

@@ -49,9 +49,9 @@
             // 
             // btnNorth
             // 
-            this.btnNorth.Location = new System.Drawing.Point(504, 12);
+            this.btnNorth.Location = new System.Drawing.Point(504, 10);
             this.btnNorth.Name = "btnNorth";
-            this.btnNorth.Size = new System.Drawing.Size(75, 41);
+            this.btnNorth.Size = new System.Drawing.Size(100, 50);
             this.btnNorth.TabIndex = 8;
             this.btnNorth.Text = "Север";
             this.btnNorth.UseVisualStyleBackColor = true;
@@ -60,7 +60,7 @@
             // cboWeapons
             // 
             this.cboWeapons.FormattingEnabled = true;
-            this.cboWeapons.Location = new System.Drawing.Point(491, 303);
+            this.cboWeapons.Location = new System.Drawing.Point(491, 310);
             this.cboWeapons.Name = "cboWeapons";
             this.cboWeapons.Size = new System.Drawing.Size(121, 21);
             this.cboWeapons.TabIndex = 15;
@@ -68,7 +68,7 @@
             // cboSkills
             // 
             this.cboSkills.FormattingEnabled = true;
-            this.cboSkills.Location = new System.Drawing.Point(491, 334);
+            this.cboSkills.Location = new System.Drawing.Point(491, 340);
             this.cboSkills.Name = "cboSkills";
             this.cboSkills.Size = new System.Drawing.Size(121, 21);
             this.cboSkills.TabIndex = 16;
@@ -76,7 +76,7 @@
             // cboPotions
             // 
             this.cboPotions.FormattingEnabled = true;
-            this.cboPotions.Location = new System.Drawing.Point(491, 363);
+            this.cboPotions.Location = new System.Drawing.Point(491, 370);
             this.cboPotions.Name = "cboPotions";
             this.cboPotions.Size = new System.Drawing.Size(121, 21);
             this.cboPotions.TabIndex = 17;
@@ -93,7 +93,7 @@
             // 
             // btnUseWeapon
             // 
-            this.btnUseWeapon.Location = new System.Drawing.Point(397, 303);
+            this.btnUseWeapon.Location = new System.Drawing.Point(397, 310);
             this.btnUseWeapon.Name = "btnUseWeapon";
             this.btnUseWeapon.Size = new System.Drawing.Size(75, 23);
             this.btnUseWeapon.TabIndex = 19;
@@ -103,7 +103,7 @@
             // 
             // btnUseSkill
             // 
-            this.btnUseSkill.Location = new System.Drawing.Point(397, 332);
+            this.btnUseSkill.Location = new System.Drawing.Point(397, 340);
             this.btnUseSkill.Name = "btnUseSkill";
             this.btnUseSkill.Size = new System.Drawing.Size(75, 23);
             this.btnUseSkill.TabIndex = 20;
@@ -113,7 +113,7 @@
             // 
             // btnUsePotion
             // 
-            this.btnUsePotion.Location = new System.Drawing.Point(397, 361);
+            this.btnUsePotion.Location = new System.Drawing.Point(397, 370);
             this.btnUsePotion.Name = "btnUsePotion";
             this.btnUsePotion.Size = new System.Drawing.Size(75, 23);
             this.btnUsePotion.TabIndex = 21;
@@ -123,7 +123,7 @@
             // 
             // rtbMessages
             // 
-            this.rtbMessages.Location = new System.Drawing.Point(12, 303);
+            this.rtbMessages.Location = new System.Drawing.Point(12, 310);
             this.rtbMessages.Name = "rtbMessages";
             this.rtbMessages.ReadOnly = true;
             this.rtbMessages.Size = new System.Drawing.Size(379, 126);
@@ -143,9 +143,9 @@
             // 
             // btnSouth
             // 
-            this.btnSouth.Location = new System.Drawing.Point(504, 69);
+            this.btnSouth.Location = new System.Drawing.Point(504, 70);
             this.btnSouth.Name = "btnSouth";
-            this.btnSouth.Size = new System.Drawing.Size(75, 41);
+            this.btnSouth.Size = new System.Drawing.Size(100, 50);
             this.btnSouth.TabIndex = 25;
             this.btnSouth.Text = "Юг";
             this.btnSouth.UseVisualStyleBackColor = true;
@@ -153,9 +153,9 @@
             // 
             // btnWest
             // 
-            this.btnWest.Location = new System.Drawing.Point(504, 125);
+            this.btnWest.Location = new System.Drawing.Point(504, 130);
             this.btnWest.Name = "btnWest";
-            this.btnWest.Size = new System.Drawing.Size(75, 41);
+            this.btnWest.Size = new System.Drawing.Size(100, 50);
             this.btnWest.TabIndex = 26;
             this.btnWest.Text = "Запад";
             this.btnWest.UseVisualStyleBackColor = true;
@@ -163,9 +163,9 @@
             // 
             // btnEast
             // 
-            this.btnEast.Location = new System.Drawing.Point(504, 185);
+            this.btnEast.Location = new System.Drawing.Point(504, 190);
             this.btnEast.Name = "btnEast";
-            this.btnEast.Size = new System.Drawing.Size(75, 41);
+            this.btnEast.Size = new System.Drawing.Size(100, 50);
             this.btnEast.TabIndex = 27;
             this.btnEast.Text = "Восток";
             this.btnEast.UseVisualStyleBackColor = true;
@@ -173,9 +173,9 @@
             // 
             // btnAction
             // 
-            this.btnAction.Location = new System.Drawing.Point(504, 247);
+            this.btnAction.Location = new System.Drawing.Point(504, 250);
             this.btnAction.Name = "btnAction";
-            this.btnAction.Size = new System.Drawing.Size(75, 41);
+            this.btnAction.Size = new System.Drawing.Size(100, 50);
             this.btnAction.TabIndex = 28;
             this.btnAction.Text = "Поиск";
             this.btnAction.UseVisualStyleBackColor = true;
@@ -184,7 +184,7 @@
             // pbCurrent
             // 
             this.pbCurrent.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbCurrent.InitialImage")));
-            this.pbCurrent.Location = new System.Drawing.Point(12, 1);
+            this.pbCurrent.Location = new System.Drawing.Point(12, 10);
             this.pbCurrent.Name = "pbCurrent";
             this.pbCurrent.Size = new System.Drawing.Size(460, 287);
             this.pbCurrent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
